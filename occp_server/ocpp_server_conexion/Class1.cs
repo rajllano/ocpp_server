@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ocpp_server_conexion
 {
-    public class Class1
+    public class Class1 
     {
     }
 }
