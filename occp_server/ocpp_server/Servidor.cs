@@ -10,16 +10,13 @@ using System.Windows.Forms;
 
 namespace ocpp_server
 {
-    public partial class Form1 : Form
+    public partial class Servidor : Form
     {
-        public Form1()
+        public Servidor()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
