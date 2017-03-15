@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ocpp_server_modelo.Servidor">
+    <Position X="3.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Servidor.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ColeccionElectrolinera" />
+      <Property Name="ColeccionEstacion" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ocpp_server_modelo.Coleccion">
+    <Position X="8.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Coleccion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ocpp_server_modelo.Estacion">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Estacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ocpp_server_modelo.ColeccionEstacion">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ColeccionEstacion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Estacion" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ocpp_server_modelo.ColeccionElectrolinera">
+    <Position X="2.25" Y="2.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ColeccionElectrolinera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
