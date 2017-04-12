@@ -5,24 +5,9 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class Servidor
+    public class Vehiculo : IClonacion
     {
-        private static Servidor Instancia;
-
-        private Servidor()
-        {
-
-        }
-
-        public static Servidor getInstancia()
-        {
-            if (Instancia == null)
-                Instancia = new Servidor();
-
-            return Instancia;
-        }
-
-        public ColeccionPuntoCarga ColeccionPuntoCarga
+        public string Placa
         {
             get
             {
@@ -34,7 +19,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public ColeccionEstacion ColeccionEstacion
+        public string Tag
         {
             get
             {
@@ -46,7 +31,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public ColeccionReserva ColeccionReserva
+        public string Marca
         {
             get
             {
@@ -58,7 +43,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public ColeccionLog ColeccionLog
+        public string Modelo
         {
             get
             {
@@ -68,6 +53,23 @@ namespace ocpp_server_modelo
             set
             {
             }
+        }
+
+        public string Propietario
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public object Clonar()
+        {
+            throw new NotImplementedException();
         }
     }
 }

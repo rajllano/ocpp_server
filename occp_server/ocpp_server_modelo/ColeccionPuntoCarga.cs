@@ -5,8 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionEstacion : Coleccion
+    public class ColeccionPuntoCarga : Coleccion
     {
-        
     }
 }

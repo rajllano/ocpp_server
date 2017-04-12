@@ -5,24 +5,9 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class Servidor
+    public class PuntoCarga : IClonacion
     {
-        private static Servidor Instancia;
-
-        private Servidor()
-        {
-
-        }
-
-        public static Servidor getInstancia()
-        {
-            if (Instancia == null)
-                Instancia = new Servidor();
-
-            return Instancia;
-        }
-
-        public ColeccionPuntoCarga ColeccionPuntoCarga
+        public int Id
         {
             get
             {
@@ -34,7 +19,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public ColeccionEstacion ColeccionEstacion
+        public string NumeroSerie
         {
             get
             {
@@ -46,7 +31,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public ColeccionReserva ColeccionReserva
+        public string Marca
         {
             get
             {
@@ -58,7 +43,31 @@ namespace ocpp_server_modelo
             }
         }
 
-        public ColeccionLog ColeccionLog
+        public string Modelo
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public EEstadoPuntoCarga EEstadoPuntoCarga
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public EEstadoConectorPuntoCarga EEstadoConectorPuntoCarga
         {
             get
             {

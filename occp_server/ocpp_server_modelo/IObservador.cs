@@ -5,7 +5,8 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionElectrolinera
+    public interface IObservador
     {
+        void Actualizar(Object o);
     }
 }

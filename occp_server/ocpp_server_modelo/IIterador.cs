@@ -5,8 +5,10 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionEstacion : Coleccion
+    public interface IIterador
     {
-        
+        Object Siguiente();
+
+        bool tieneSiguiente();
     }
 }

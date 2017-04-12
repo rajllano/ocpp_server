@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class Estacion : IClonacion
+    public class Reserva
     {
         public int Id
         {
@@ -19,7 +19,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public string Nombre
+        public PuntoCarga PuntoCarga
         {
             get
             {
@@ -31,7 +31,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public int Direccion
+        public Vehiculo Vehiculo
         {
             get
             {
@@ -43,7 +43,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public int Ubicacion
+        public System.DateTime FechaHora
         {
             get
             {
@@ -55,7 +55,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public ColeccionPuntoCarga ColeccionPuntoCarga
+        public int Tiempo
         {
             get
             {
@@ -67,9 +67,52 @@ namespace ocpp_server_modelo
             }
         }
 
-        public object Clonar()
+        public double ValorRecarga
         {
-            throw new NotImplementedException();
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public double EnergiaRecarga
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public System.DateTime FechaRegistro
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
+
+        public EEstadoReserva EEstadoReserva
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
         }
     }
 }

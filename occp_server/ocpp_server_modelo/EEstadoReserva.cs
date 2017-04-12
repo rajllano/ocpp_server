@@ -5,8 +5,10 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionEstacion : Coleccion
+    public enum EEstadoReserva
     {
-        
+        CANCELADA = 1,
+        APROBADA = 2,
+        VENCIDA = 3
     }
 }
