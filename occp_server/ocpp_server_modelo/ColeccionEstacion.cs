@@ -5,11 +5,11 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionEstacion : IColeccionGenerica<Estacion, IteradorColeccionEstacion>
+    public class ColeccionEstacion : Coleccion<Estacion>, IColeccionGenerica<Estacion, IteradorColeccionEstacion>
     {
         public void Agregar(Estacion Elemento)
         {
-            throw new NotImplementedException();
+
         }
 
         public Estacion Elemento(int Indice)

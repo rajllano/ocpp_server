@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionVehiculo : IColeccionGenerica<Vehiculo, IteradorColeccionVehiculo>
+    public class ColeccionVehiculo : Coleccion<Vehiculo>, IColeccionGenerica<Vehiculo, IteradorColeccionVehiculo>
     {
         public void Agregar(Vehiculo Elemento)
         {

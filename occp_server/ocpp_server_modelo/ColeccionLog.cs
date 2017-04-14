@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionLog : IObservador, IColeccionGenerica<Log, IteradorColeccionLog>
+    public class ColeccionLog : Coleccion<object>, IObservador, IColeccionGenerica<Log, IteradorColeccionLog>
     {
         public void Actualizar(object o)
         {

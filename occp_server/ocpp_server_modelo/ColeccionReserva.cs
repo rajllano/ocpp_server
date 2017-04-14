@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionReserva : IColeccionGenerica<Reserva, IteradorColeccionReserva>
+    public class ColeccionReserva : Coleccion<Reserva>, IColeccionGenerica<Reserva, IteradorColeccionReserva>
     {
         public void Agregar(Reserva Elemento)
         {

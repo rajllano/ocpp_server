@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionPuntoCarga : IColeccionGenerica<PuntoCarga, IteradorColeccionPuntoCarga>
+    public class ColeccionPuntoCarga : Coleccion<object>, IColeccionGenerica<PuntoCarga, IteradorColeccionPuntoCarga>
     {
         public void Agregar(PuntoCarga Elemento)
         {
