@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class Estacion : IClonacion
+    public class Estacion : IClonacion<Estacion>
     {
         public int Id
         {
@@ -67,7 +67,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public object Clonar()
+        public Estacion Clonar()
         {
             throw new NotImplementedException();
         }

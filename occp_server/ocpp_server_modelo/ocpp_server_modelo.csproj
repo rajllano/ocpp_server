@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coleccion.cs" />
     <Compile Include="ColeccionEstacion.cs" />
     <Compile Include="ColeccionLog.cs" />
     <Compile Include="ColeccionPuntoCarga.cs" />
@@ -52,10 +51,18 @@
     <Compile Include="Estacion.cs" />
     <Compile Include="EstadoPuntoCarga.cs" />
     <Compile Include="IClonacion.cs" />
+    <Compile Include="IColeccion.cs" />
+    <Compile Include="IColeccionGenerica.cs" />
+    <Compile Include="IIterable.cs" />
     <Compile Include="IIterador.cs" />
+    <Compile Include="IteradorColeccionLog.cs" />
+    <Compile Include="IIteradorColeccionReserva.cs" />
+    <Compile Include="IObservable.cs" />
     <Compile Include="IObservador.cs" />
-    <Compile Include="ISujeto.cs" />
     <Compile Include="IteradorColeccion.cs" />
+    <Compile Include="IteradorColeccionEstacion.cs" />
+    <Compile Include="IteradorColeccionPuntoCarga.cs" />
+    <Compile Include="IteradorColeccionVehiculo.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PuntoCarga.cs" />

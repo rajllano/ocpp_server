@@ -9,14 +9,11 @@ namespace ocpp_server_control
 {
     public static class ControlAplicacion
     {
-        private static Servidor Instancia = null;
+        
         
         public static Servidor getInstancia()
         {
-            if (Instancia == null)
-                Instancia = new Servidor();
-
-            return Instancia;
+            return null;
         }
     }
 }

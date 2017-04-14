@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public interface ISujeto
+    public interface IObservable
     {
         void RegistrarObservador(IObservador o);
         void EliminarObservador(IObservador o);

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class PuntoCarga : IClonacion
+    public class PuntoCarga : IClonacion<PuntoCarga>
     {
         public int Id
         {
@@ -77,6 +77,11 @@ namespace ocpp_server_modelo
             set
             {
             }
+        }
+
+        public PuntoCarga Clonar()
+        {
+            throw new NotImplementedException();
         }
     }
 }

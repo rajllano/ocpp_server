@@ -1,14 +1,13 @@
-﻿using System;
+﻿using ocpp_server_modelo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public interface IIterador<T>
+    public interface IIterable<I>
     {
-        T Siguiente();
-
-        bool tieneSiguiente();
+        IIterador<I> Iterador();
     }
 }

@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ocpp_server_modelo.Servidor">
-    <Position X="9" Y="3" Width="1.5" />
+    <Position X="9.75" Y="3" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAEAIAAAAAgEAA=</HashCode>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAUAIAAAAAgEAA=</HashCode>
       <FileName>Servidor.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -11,18 +11,11 @@
       <Property Name="ColeccionEstacion" />
       <Property Name="ColeccionReserva" />
       <Property Name="ColeccionLog" />
+      <Property Name="ColeccionVehiculo" />
     </ShowAsAssociation>
   </Class>
-  <Class Name="ocpp_server_modelo.Coleccion">
-    <Position X="11.5" Y="3" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAJACAQAEQEAAAAAAEAAAAAAAAAAAAAAAAgAAAAAEA=</HashCode>
-      <FileName>Coleccion.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.2" />
-  </Class>
   <Class Name="ocpp_server_modelo.Estacion">
-    <Position X="16.5" Y="6.5" Width="1.5" />
+    <Position X="16.5" Y="7.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAACABgIAAAAAAAAAAAAAAAAAAEAA=</HashCode>
       <FileName>Estacion.cs</FileName>
@@ -33,14 +26,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.ColeccionEstacion">
-    <Position X="13.75" Y="3.25" Width="2.5" />
+    <Position X="13" Y="3.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAJACAQAAQAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAEA=</HashCode>
       <FileName>ColeccionEstacion.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.PuntoCarga">
-    <Position X="12" Y="8.5" Width="2" />
+    <Position X="11.75" Y="10.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAACCBAAAAAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAEA=</HashCode>
       <FileName>PuntoCarga.cs</FileName>
@@ -52,14 +46,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.ColeccionPuntoCarga">
-    <Position X="11.5" Y="7" Width="2.5" />
+    <Position X="12.25" Y="7" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAJACAQAAQAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAEA=</HashCode>
       <FileName>ColeccionPuntoCarga.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.Vehiculo">
-    <Position X="6.5" Y="6.5" Width="1.75" />
+    <Position X="5.75" Y="8.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAARAAAAAgAAAAAAABAAAAAEAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Vehiculo.cs</FileName>
@@ -67,14 +62,15 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.ColeccionVehiculo">
-    <Position X="6.25" Y="4.5" Width="2.25" />
+    <Position X="5.75" Y="5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAJACAQAAQAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAEA=</HashCode>
       <FileName>ColeccionVehiculo.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.Reserva">
-    <Position X="3" Y="6.5" Width="1.75" />
+    <Position X="3.25" Y="7.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAACIAQAAAAAAAQAACAQASAAAAA=</HashCode>
       <FileName>Reserva.cs</FileName>
@@ -86,78 +82,131 @@
   <Class Name="ocpp_server_modelo.ColeccionReserva">
     <Position X="3.25" Y="4.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAJACAQAAQAAAAAAAEAAAAAAAAAAAAAAAAgAAAAAEA=</HashCode>
       <FileName>ColeccionReserva.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.Log">
-    <Position X="5" Y="1" Width="1.5" />
+    <Position X="4.25" Y="0.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Log.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ocpp_server_modelo.ColeccionLog">
-    <Position X="7.5" Y="1" Width="1.5" />
+    <Position X="6.5" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAJACAQAAQAAAAAAAEAAAAAAAAAAAAIAAAgAAAAAEA=</HashCode>
       <FileName>ColeccionLog.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Class Name="ocpp_server_modelo.IteradorColeccion">
-    <Position X="13.75" Y="4.75" Width="1.75" />
+  <Class Name="ocpp_server_modelo.IteradorColeccionEstacion">
+    <Position X="16.75" Y="5" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>AAAAAAQAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
-      <FileName>IteradorColeccion.cs</FileName>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>IteradorColeccionEstacion.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
-  <Interface Name="ocpp_server_modelo.IClonacion">
-    <Position X="6.75" Y="9.5" Width="1.5" />
+  <Class Name="ocpp_server_modelo.IteradorColeccionLog">
+    <Position X="9.25" Y="1" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>IteradorColeccionLog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ocpp_server_modelo.IteradorColeccionReserva">
+    <Position X="0.75" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IIteradorColeccionReserva.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ocpp_server_modelo.IteradorColeccionVehiculo">
+    <Position X="8.5" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>IteradorColeccionVehiculo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ocpp_server_modelo.IteradorColeccionPuntoCarga">
+    <Position X="9" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>IteradorColeccionPuntoCarga.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ocpp_server_modelo.IClonacion&lt;T&gt;">
+    <Position X="22.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IClonacion.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ocpp_server_modelo.IIterador">
-    <Position X="16.5" Y="4.75" Width="1.5" />
+  <Interface Name="ocpp_server_modelo.IIterador&lt;T&gt;">
+    <Position X="22.25" Y="2.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
       <FileName>IIterador.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="ocpp_server_modelo.ISujeto">
-    <Position X="11.25" Y="0.5" Width="2.25" />
-    <TypeIdentifier>
-      <HashCode>AAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
-      <FileName>ISujeto.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
   <Interface Name="ocpp_server_modelo.IObservador">
-    <Position X="2.25" Y="1" Width="1.75" />
+    <Position X="19.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
       <FileName>IObservador.cs</FileName>
     </TypeIdentifier>
   </Interface>
+  <Interface Name="ocpp_server_modelo.IColeccion&lt;T&gt;">
+    <Position X="17" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAQAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>IColeccion.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ocpp_server_modelo.IColeccionGenerica&lt;T, I&gt;">
+    <Position X="16.75" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IColeccionGenerica.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ocpp_server_modelo.IObservable">
+    <Position X="19.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>IObservable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ocpp_server_modelo.IIterable&lt;I&gt;">
+    <Position X="14.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IIterable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Enum Name="ocpp_server_modelo.EEstadoPuntoCarga">
-    <Position X="12" Y="11.5" Width="2" />
+    <Position X="11.75" Y="12.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAgAIAAAAAAAAAAAAg=</HashCode>
       <FileName>EEstadoPuntoCarga.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="ocpp_server_modelo.EEstadoConectorPuntoCarga">
-    <Position X="16.5" Y="9" Width="2.5" />
+    <Position X="15" Y="10.75" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EEstadoConectorPuntoCarga.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="ocpp_server_modelo.EEstadoReserva">
-    <Position X="3" Y="9.75" Width="1.75" />
+    <Position X="3.25" Y="11.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEA=</HashCode>
       <FileName>EEstadoReserva.cs</FileName>

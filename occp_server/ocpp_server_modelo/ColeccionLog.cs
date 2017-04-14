@@ -5,16 +5,51 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionLog : Coleccion, IObservador
+    public class ColeccionLog : IObservador, IColeccionGenerica<Log, IteradorColeccionLog>
     {
         public void Actualizar(object o)
         {
-            Log l = new ocpp_server_modelo.Log();
+            throw new NotImplementedException();
+        }
 
-            l.FechaHora = DateTime.Now;
-            l.Evento = o.ToString();
+        public void Agregar(Log Elemento)
+        {
+            throw new NotImplementedException();
+        }
 
-            this.Agregar(l);
+        public Log Elemento(int Indice)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Eliminar(Log Elemento)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void EliminarObservador(IObservador o)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IIterador<IteradorColeccionLog> Iterador()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void NotificarObservador()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RegistrarObservador(IObservador o)
+        {
+            throw new NotImplementedException();
+        }
+
+        public int Tamano()
+        {
+            throw new NotImplementedException();
         }
     }
 }

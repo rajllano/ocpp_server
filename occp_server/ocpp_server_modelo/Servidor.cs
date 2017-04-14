@@ -69,5 +69,17 @@ namespace ocpp_server_modelo
             {
             }
         }
+
+        public ColeccionVehiculo ColeccionVehiculo
+        {
+            get
+            {
+                throw new System.NotImplementedException();
+            }
+
+            set
+            {
+            }
+        }
     }
 }

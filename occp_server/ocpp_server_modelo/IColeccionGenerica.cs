@@ -5,10 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public interface IIterador<T>
+    public interface IColeccionGenerica<T, I> : IColeccion<T>, IObservable, IIterable<I>
     {
-        T Siguiente();
-
-        bool tieneSiguiente();
     }
 }

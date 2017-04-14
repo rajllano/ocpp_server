@@ -5,8 +5,8 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public interface IClonacion
+    public interface IClonacion<T>
     {
-        Object Clonar();
+        T Clonar();
     }
 }

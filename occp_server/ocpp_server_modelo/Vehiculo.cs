@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class Vehiculo : IClonacion
+    public class Vehiculo : IClonacion<Vehiculo>
     {
         public string Placa
         {
@@ -67,7 +67,7 @@ namespace ocpp_server_modelo
             }
         }
 
-        public object Clonar()
+        public Vehiculo Clonar()
         {
             throw new NotImplementedException();
         }
