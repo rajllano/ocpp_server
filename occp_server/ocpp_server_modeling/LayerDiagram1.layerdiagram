@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3f27fd8c-cb32-4b1c-8312-8e1ccd124424" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="834ca8b8-bc59-4772-8e52-d21ca8f2326a" name="GUI - Servidor">
+      <childLayers>
+        <layer Id="b3322b6a-8775-49f7-a0fa-72ce00e016a7" name="Monitoreo de Puntos de Carga">
+          <childLayers>
+            <layer Id="50cbd360-a721-4478-b8ee-569259ad2322" name="Logs" />
+          </childLayers>
+        </layer>
+        <layer Id="d4649222-95e2-48ba-b9fd-7421a4e73b9d" name="Gestión Administrativa">
+          <childLayers>
+            <layer Id="a326c573-a6d7-46d2-ad31-2e788f9708f9" name="Reservas" />
+            <layer Id="8846e310-5c3a-4d0b-a36e-bf644cf7df5f" name="Vehiculos" />
+          </childLayers>
+        </layer>
+        <layer Id="63a4f4a9-6f57-48a0-9a27-c765b43579cd" name="Control de Puntos de Carga" />
+      </childLayers>
+    </layer>
+    <layer Id="f4d0b8c8-2775-4628-bff2-2ab4f1b83989" name="Controlador">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f8db9c31-8b63-479b-b9f7-d45a551a29ef" direction="Bidirectional">
+          <layerMoniker Id="834ca8b8-bc59-4772-8e52-d21ca8f2326a" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="fc45921a-db90-4dbf-a3e2-0735bcc62e99" direction="Bidirectional">
+          <layerMoniker Id="a9584c51-f3e5-47cf-a4e8-e7c7b9ad541f" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="43ad2c31-cf63-4ba0-ae18-654332a0e05a" direction="Bidirectional">
+          <layerMoniker Id="cc7619dc-26fb-4da1-80b5-8b683520e5de" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <childLayers>
+        <layer Id="31239915-d657-4cc6-b061-f234e9f9652a" name="Controlador de Puntos de Carga">
+          <childLayers>
+            <layer Id="e2b14334-cc68-4d3b-9977-03280a8fd8ea" name="Crear" />
+            <layer Id="a4f2458b-2944-4678-86d9-3c937d11cf20" name="Eliminar" />
+            <layer Id="cff3a24d-2eec-455d-980e-2d5e053a8c71" name="...." />
+          </childLayers>
+        </layer>
+        <layer Id="59f97925-d9a8-405a-8b94-6ed6b2c84092" name="Controlador de Estaciones">
+          <childLayers>
+            <layer Id="356b36a4-c792-4f3f-9810-3712ea5c57f1" name="Crear" />
+            <layer Id="5e7ab957-d29a-41c4-bd89-0c26e02b3e4a" name="Eliminar" />
+            <layer Id="201172b4-2072-4c11-af93-4d22a94034ed" name="...." />
+          </childLayers>
+        </layer>
+        <layer Id="041cb706-6ba7-4f29-a202-010efb2705d3" name="Controlador de Vehiculos">
+          <childLayers>
+            <layer Id="2d4a2b4c-6284-422e-bf35-e278f232592d" name="Crear" />
+            <layer Id="828beec1-f823-4486-9fef-bcb94a2ba042" name="Eliminar" />
+            <layer Id="2f48fa0e-eb1c-40dc-af85-146a22944b9c" name="...." />
+          </childLayers>
+        </layer>
+        <layer Id="4865aca1-42b3-4b04-8641-32259f73598d" name="Controlador de reservas">
+          <childLayers>
+            <layer Id="4c7d649c-c1ca-4972-aa23-75ce59a86ac1" name="Crear" />
+            <layer Id="65b85fad-5bc8-4e08-8daa-9f6288938611" name="Eliminar" />
+            <layer Id="06fdd436-116a-41eb-b2d5-db23fcba42ff" name="...." />
+          </childLayers>
+        </layer>
+      </childLayers>
+    </layer>
+    <layer Id="a9584c51-f3e5-47cf-a4e8-e7c7b9ad541f" name="Conexión - WebSocket">
+      <childLayers>
+        <layer Id="1756a338-b45f-447d-b3ac-70488bed41e2" name="Serialización Json" />
+        <layer Id="fda9251e-c340-4697-87f1-815b0a0f99bf" name="Des serialización Json" />
+      </childLayers>
+    </layer>
+    <layer Id="cc7619dc-26fb-4da1-80b5-8b683520e5de" name="Modelo" />
+  </layers>
+</layerModel>

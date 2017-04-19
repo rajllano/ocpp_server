@@ -290,7 +290,7 @@
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage3.Size = new System.Drawing.Size(723, 425);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Gestión de Clientes";
+            this.tabPage3.Text = "Gestión de Administrativa";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabControl2
