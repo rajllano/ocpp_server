@@ -66,6 +66,18 @@
         <layer Id="fda9251e-c340-4697-87f1-815b0a0f99bf" name="Des serialización Json" />
       </childLayers>
     </layer>
-    <layer Id="cc7619dc-26fb-4da1-80b5-8b683520e5de" name="Modelo" />
+    <layer Id="cc7619dc-26fb-4da1-80b5-8b683520e5de" name="Modelo">
+      <childLayers>
+        <layer Id="ca2cf3b1-e9c8-43fa-97f6-237ee66caddb" name="Vehiculos" />
+        <layer Id="0b7fd9cd-82de-4279-90e2-78c801820e0e" name="Reservas" />
+        <layer Id="475430a7-fcec-46ec-a3c9-aaba37abcd57" name="Estaciones" />
+        <layer Id="a6d3ddbb-2ffa-4b0b-9aac-5a99d92602d6" name="Puntos de Carga" />
+        <layer Id="eb475c1a-f785-481f-949e-cfa1b62b1f50" name="Logs" />
+        <layer Id="fcb32fa5-1a6a-4f38-a7a6-f6f6196d6528" name="Colecciones" />
+        <layer Id="3fa8652f-7b95-40c9-b53c-b55ec75d817a" name="Iteradores" />
+        <layer Id="c36d93d7-c667-406a-b994-05c7b10e7e10" name="Observadores" />
+        <layer Id="4a556083-b350-4cbd-b5ea-417fa2950d5f" name="Clonadores" />
+      </childLayers>
+    </layer>
   </layers>
 </layerModel>
