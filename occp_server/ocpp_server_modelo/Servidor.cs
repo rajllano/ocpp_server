@@ -9,11 +9,6 @@ namespace ocpp_server_modelo
     {
         private static Servidor Instancia;
 
-        private Servidor()
-        {
-
-        }
-
         public static Servidor getInstancia()
         {
             if (Instancia == null)
@@ -22,64 +17,34 @@ namespace ocpp_server_modelo
             return Instancia;
         }
 
-        public ColeccionPuntoCarga ColeccionPuntoCarga
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public ColeccionPuntoCarga ColeccionPuntoCarga { get; set; }
 
-            set
-            {
-            }
+        public ColeccionEstacion ColeccionEstacion { get; set; }
+
+        public ColeccionReserva ColeccionReserva { get; set; }
+
+        public ColeccionLog ColeccionLog { get; set; }
+
+        public ColeccionVehiculo ColeccionVehiculo { get; set; }
+
+        private Servidor()
+        {
+            this.ColeccionPuntoCarga = new ColeccionPuntoCarga();
+            this.ColeccionEstacion = new ColeccionEstacion();
+            this.ColeccionReserva = new ColeccionReserva();
+            this.ColeccionLog = new ColeccionLog();
+            this.ColeccionVehiculo = new ColeccionVehiculo();
         }
 
-        public ColeccionEstacion ColeccionEstacion
+        ~Servidor()
         {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+            this.ColeccionPuntoCarga = null;
+            this.ColeccionEstacion = null;
+            this.ColeccionReserva = null;
+            this.ColeccionLog = null;
+            this.ColeccionVehiculo = null;
 
-            set
-            {
-            }
-        }
-
-        public ColeccionReserva ColeccionReserva
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public ColeccionLog ColeccionLog
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public ColeccionVehiculo ColeccionVehiculo
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
+            GC.Collect();
         }
     }
 }
