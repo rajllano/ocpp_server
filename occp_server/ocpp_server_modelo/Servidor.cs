@@ -23,8 +23,6 @@ namespace ocpp_server_modelo
 
         public ColeccionReserva ColeccionReserva { get; set; }
 
-        public ColeccionLog ColeccionLog { get; set; }
-
         public ColeccionVehiculo ColeccionVehiculo { get; set; }
 
         private Servidor()
@@ -32,7 +30,6 @@ namespace ocpp_server_modelo
             this.ColeccionPuntoCarga = new ColeccionPuntoCarga();
             this.ColeccionEstacion = new ColeccionEstacion();
             this.ColeccionReserva = new ColeccionReserva();
-            this.ColeccionLog = new ColeccionLog();
             this.ColeccionVehiculo = new ColeccionVehiculo();
         }
 
@@ -41,7 +38,6 @@ namespace ocpp_server_modelo
             this.ColeccionPuntoCarga = null;
             this.ColeccionEstacion = null;
             this.ColeccionReserva = null;
-            this.ColeccionLog = null;
             this.ColeccionVehiculo = null;
 
             GC.Collect();

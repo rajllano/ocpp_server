@@ -7,7 +7,7 @@ namespace ocpp_server_modelo
 {
     public class Coleccion<T>
     {
-        public List<T> Lista { get; set; }
+        private List<T> Lista;
 
         public Coleccion()
         {
@@ -21,11 +21,6 @@ namespace ocpp_server_modelo
             GC.Collect();
         }
 
-        public int Tamano()
-        {
-            return this.Lista.Count;
-        }
-
         public void Agregar(T Elemento)
         {
             if (!this.Lista.Contains(Elemento))
@@ -36,6 +31,16 @@ namespace ocpp_server_modelo
         {
             if (this.Lista.Contains(Elemento))
                 this.Lista.Remove(Elemento);
+        }
+
+        public T Elemento(int Indice)
+        {
+            return this.Lista[Indice];
+        }
+
+        public int Tamano()
+        {
+            return this.Lista.Count;
         }
     }
 }

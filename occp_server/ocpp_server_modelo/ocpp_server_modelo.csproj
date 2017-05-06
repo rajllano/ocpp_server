@@ -51,11 +51,8 @@
     <Compile Include="Estacion.cs" />
     <Compile Include="EstadoPuntoCarga.cs" />
     <Compile Include="IClonacion.cs" />
-    <Compile Include="IColeccion.cs" />
-    <Compile Include="IColeccionGenerica.cs" />
     <Compile Include="IIterable.cs" />
     <Compile Include="IIterador.cs" />
-    <Compile Include="IteradorColeccionLog.cs" />
     <Compile Include="IIteradorColeccionReserva.cs" />
     <Compile Include="IteradorColeccion.cs" />
     <Compile Include="IteradorColeccionEstacion.cs" />

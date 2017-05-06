@@ -5,39 +5,9 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionPuntoCarga : Coleccion<PuntoCarga>, IColeccionGenerica<PuntoCarga>
+    public class ColeccionPuntoCarga : Coleccion<PuntoCarga>, IIterable
     {
-        public void Agregar(PuntoCarga Elemento)
-        {
-            throw new NotImplementedException();
-        }
-
-        public PuntoCarga Elemento(int Indice)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Eliminar(PuntoCarga Elemento)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void EliminarObservador(IObservador o)
-        {
-            throw new NotImplementedException();
-        }
-
         public object Iterador()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void NotificarObservador()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RegistrarObservador(IObservador o)
         {
             throw new NotImplementedException();
         }
