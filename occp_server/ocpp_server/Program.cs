@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ocpp_server_control;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace ocpp_server
         [STAThread]
         static void Main()
         {
+            ControlLog.Registrar("hola mundo");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Servidor());

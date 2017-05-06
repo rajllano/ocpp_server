@@ -5,7 +5,8 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public interface IColeccionGenerica<T> : IColeccion<T>, IObservable, IIterable
+    public interface IColeccionGenerica<T> : IColeccion<T>, IIterable
     {
+
     }
 }

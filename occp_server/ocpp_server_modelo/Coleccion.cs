@@ -25,5 +25,17 @@ namespace ocpp_server_modelo
         {
             return this.Lista.Count;
         }
+
+        public void Agregar(T Elemento)
+        {
+            if (!this.Lista.Contains(Elemento))
+                this.Lista.Add(Elemento);
+        }
+
+        public void Eliminar(T Elemento)
+        {
+            if (this.Lista.Contains(Elemento))
+                this.Lista.Remove(Elemento);
+        }
     }
 }

@@ -12,12 +12,17 @@ namespace ocpp_server_control
         public static void Registrar(string Mensaje)
         {
             DateTime Fecha = DateTime.Now;
-            String NombreArchivo = Fecha.Day.ToString() + Fecha.Month.ToString() + Fecha.Year.ToString() + "_" + Fecha.Hour.ToString();
+            String NombreArchivo = "";
+
+            NombreArchivo = Fecha.Day.ToString().PadLeft(2,'0');
+            NombreArchivo += Fecha.Month.ToString().PadLeft(2, '0'); ;
+            NombreArchivo += Fecha.Year.ToString() + "_";
+            NombreArchivo += Fecha.Hour.ToString().PadLeft(2,'0');
 
             try
             {
                 StreamWriter Archivo = new StreamWriter(@"C:\Log\" + NombreArchivo + ".txt");
-                Archivo.WriteLine("[" + Fecha.ToString() + "]" + Mensaje + "\n");
+                Archivo.WriteLine("[" + Fecha.ToString() + "] " + Mensaje);
                 Archivo.Close();
             }
             catch(Exception e)

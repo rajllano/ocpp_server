@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="Coleccion.cs" />
     <Compile Include="ColeccionEstacion.cs" />
-    <Compile Include="ColeccionLog.cs" />
     <Compile Include="ColeccionPuntoCarga.cs" />
     <Compile Include="ColeccionReserva.cs" />
     <Compile Include="ColeccionVehiculo.cs" />
@@ -58,13 +57,10 @@
     <Compile Include="IIterador.cs" />
     <Compile Include="IteradorColeccionLog.cs" />
     <Compile Include="IIteradorColeccionReserva.cs" />
-    <Compile Include="IObservable.cs" />
-    <Compile Include="IObservador.cs" />
     <Compile Include="IteradorColeccion.cs" />
     <Compile Include="IteradorColeccionEstacion.cs" />
     <Compile Include="IteradorColeccionPuntoCarga.cs" />
     <Compile Include="IteradorColeccionVehiculo.cs" />
-    <Compile Include="Log.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PuntoCarga.cs" />
     <Compile Include="Reserva.cs" />

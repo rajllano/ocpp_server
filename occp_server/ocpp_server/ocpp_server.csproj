@@ -120,6 +120,12 @@
   <ItemGroup>
     <None Include="Resources\reserva.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ocpp_server_control\ocpp_server_control.csproj">
+      <Project>{ad9bf7e7-3055-40b4-868a-84187fa31546}</Project>
+      <Name>ocpp_server_control</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
