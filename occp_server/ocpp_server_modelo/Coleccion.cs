@@ -20,5 +20,10 @@ namespace ocpp_server_modelo
 
             GC.Collect();
         }
+
+        public int Tamano()
+        {
+            return this.Lista.Count;
+        }
     }
 }

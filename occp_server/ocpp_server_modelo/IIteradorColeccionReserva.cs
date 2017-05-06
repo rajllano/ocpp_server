@@ -5,9 +5,9 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class IteradorColeccionReserva : IIterable<ColeccionReserva>
+    public class IteradorColeccionReserva : IIterable
     {
-        public IIterador<ColeccionReserva> Iterador()
+        public object Iterador()
         {
             throw new NotImplementedException();
         }

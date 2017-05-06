@@ -5,8 +5,13 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionLog : Coleccion<Log>, IObservador, IColeccionGenerica<Log, IteradorColeccionLog>
+    public class ColeccionLog : Coleccion<Log>, IObservador, IColeccionGenerica<Log>
     {
+        public void Actualizar(object o)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Agregar(Log Elemento)
         {
             throw new NotImplementedException();
@@ -27,7 +32,7 @@ namespace ocpp_server_modelo
             throw new NotImplementedException();
         }
 
-        public IIterador<IteradorColeccionLog> Iterador()
+        public object Iterador()
         {
             throw new NotImplementedException();
         }
@@ -38,16 +43,6 @@ namespace ocpp_server_modelo
         }
 
         public void RegistrarObservador(IObservador o)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Tamano()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IObservador.Actualizar(object o)
         {
             throw new NotImplementedException();
         }

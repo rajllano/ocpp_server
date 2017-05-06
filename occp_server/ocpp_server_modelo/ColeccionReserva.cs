@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public class ColeccionReserva : Coleccion<Reserva>, IColeccionGenerica<Reserva, IteradorColeccionReserva>
+    public class ColeccionReserva : Coleccion<Reserva>, IColeccionGenerica<Reserva>
     {
         public void Agregar(Reserva Elemento)
         {
@@ -27,7 +27,7 @@ namespace ocpp_server_modelo
             throw new NotImplementedException();
         }
 
-        public IIterador<IteradorColeccionReserva> Iterador()
+        public object Iterador()
         {
             throw new NotImplementedException();
         }
@@ -38,11 +38,6 @@ namespace ocpp_server_modelo
         }
 
         public void RegistrarObservador(IObservador o)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Tamano()
         {
             throw new NotImplementedException();
         }

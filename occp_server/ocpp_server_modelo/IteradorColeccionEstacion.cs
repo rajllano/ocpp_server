@@ -7,14 +7,41 @@ namespace ocpp_server_modelo
 {
     public class IteradorColeccionEstacion : IIterador<Estacion>
     {
+        private ColeccionEstacion Coleccion = null;
+        private int Indice;
+
+        public IteradorColeccionEstacion(ColeccionEstacion c)
+        {
+            this.Coleccion = c;
+            this.Indice = -1;
+        }
+
+        ~IteradorColeccionEstacion()
+        {
+            this.Coleccion = null;
+
+            GC.Collect();
+        }
+
         public Estacion Siguiente()
         {
-            throw new NotImplementedException();
+            Indice++;
+
+            if(Indice < this.Coleccion.Tamano())
+            {
+                Indice++;
+                return this.Coleccion.Elemento(Indice);
+            }
+
+            return null;
         }
 
         public bool tieneSiguiente()
         {
-            throw new NotImplementedException();
+            if (this.Indice + 1 < this.Coleccion.Tamano())
+                return true;
+
+            return false;
         }
     }
 }

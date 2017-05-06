@@ -7,69 +7,28 @@ namespace ocpp_server_modelo
 {
     public class Estacion : IClonacion<Estacion>
     {
-        public int Id
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public int Id { get; set; }
 
-            set
-            {
-            }
-        }
+        public string Nombre { get; set; }
 
-        public string Nombre
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public string Direccion { get; set; }
 
-            set
-            {
-            }
-        }
+        public string Ubicacion { get; set; }
 
-        public int Direccion
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public int Ubicacion
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public ColeccionPuntoCarga ColeccionPuntoCarga
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        public ColeccionPuntoCarga ColeccionPuntoCarga { get; set; }
 
         public Estacion Clonar()
         {
-            throw new NotImplementedException();
+            Estacion e = new Estacion();
+
+            e.Id = this.Id;
+            e.Nombre = this.Nombre;
+            e.Direccion = this.Direccion;
+            e.Ubicacion = this.Ubicacion;
+
+            e.ColeccionPuntoCarga = new ColeccionPuntoCarga();
+
+            return e;
         }
     }
 }

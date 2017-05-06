@@ -6,8 +6,8 @@ using System.Text;
 
 namespace ocpp_server_modelo
 {
-    public interface IIterable<I>
+    public interface IIterable
     {
-        IIterador<I> Iterador();
+        Object Iterador();
     }
 }

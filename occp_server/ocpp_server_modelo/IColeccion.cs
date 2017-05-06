@@ -9,7 +9,6 @@ namespace ocpp_server_modelo
     {
         void Agregar(T Elemento);
         void Eliminar(T Elemento);
-        int Tamano();
         T Elemento(int Indice);
     }
 }
