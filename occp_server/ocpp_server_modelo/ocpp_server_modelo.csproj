@@ -54,7 +54,6 @@
     <Compile Include="IIterable.cs" />
     <Compile Include="IIterador.cs" />
     <Compile Include="IIteradorColeccionReserva.cs" />
-    <Compile Include="IteradorColeccion.cs" />
     <Compile Include="IteradorColeccionEstacion.cs" />
     <Compile Include="IteradorColeccionPuntoCarga.cs" />
     <Compile Include="IteradorColeccionVehiculo.cs" />

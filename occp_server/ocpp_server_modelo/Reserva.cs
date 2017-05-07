@@ -7,112 +7,22 @@ namespace ocpp_server_modelo
 {
     public class Reserva
     {
-        public int Id
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public int Id { get; set; }
 
-            set
-            {
-            }
-        }
+        public PuntoCarga PuntoCarga { get; set; }
 
-        public PuntoCarga PuntoCarga
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public Vehiculo Vehiculo { get; set; }
 
-            set
-            {
-            }
-        }
+        public DateTime FechaHora { get; set; }
 
-        public Vehiculo Vehiculo
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public int Tiempo { get; set; }
 
-            set
-            {
-            }
-        }
+        public double ValorRecarga { get; set; }
 
-        public System.DateTime FechaHora
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public double EnergiaRecarga { get; set; }
 
-            set
-            {
-            }
-        }
+        public DateTime FechaRegistro { get; set; }
 
-        public int Tiempo
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public double ValorRecarga
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public double EnergiaRecarga
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public System.DateTime FechaRegistro
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public EEstadoReserva EEstadoReserva
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        public EEstadoReserva EEstadoReserva { get; set; }
     }
 }

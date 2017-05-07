@@ -52,7 +52,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.Vehiculo" BaseTypeListCollapsed="true">
-    <Position X="2.75" Y="8.75" Width="1.75" />
+    <Position X="2.75" Y="8.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAARAAAAAgAAAAAAABAAAAAEAAAAAAAAgAAAAAAAA=</HashCode>
       <FileName>Vehiculo.cs</FileName>
@@ -68,19 +68,16 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.Reserva">
-    <Position X="16.5" Y="7.25" Width="1.5" />
+    <Position X="0.5" Y="8.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAAAAACIAQAAAAAAAQAACAQASAAAAA=</HashCode>
       <FileName>Reserva.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="EEstadoReserva" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="ocpp_server_modelo.ColeccionReserva">
-    <Position X="0.5" Y="3.75" Width="1.5" />
+    <Position X="0.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>ColeccionReserva.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -93,10 +90,10 @@
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="ocpp_server_modelo.IteradorColeccionReserva" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="12.75" Y="1.5" Width="1.5" />
+  <Class Name="ocpp_server_modelo.IteradorColeccionReserva" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAQAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAgE=</HashCode>
       <FileName>IIteradorColeccionReserva.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
@@ -160,7 +157,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="ocpp_server_modelo.EEstadoReserva">
-    <Position X="14" Y="8.25" Width="1.5" />
+    <Position X="0.5" Y="12" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEA=</HashCode>
       <FileName>EEstadoReserva.cs</FileName>
