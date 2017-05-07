@@ -16,7 +16,6 @@ namespace ocpp_server
         [STAThread]
         static void Main()
         {
-            ControlLog.Registrar("hola mundo");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Servidor());

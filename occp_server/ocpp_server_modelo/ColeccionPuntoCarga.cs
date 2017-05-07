@@ -7,9 +7,25 @@ namespace ocpp_server_modelo
 {
     public class ColeccionPuntoCarga : Coleccion<PuntoCarga>, IIterable
     {
+        public PuntoCarga BuscarPorId(int Id)
+        {
+            PuntoCarga p = null;
+            IteradorColeccionPuntoCarga i = (IteradorColeccionPuntoCarga)Iterador();
+
+            while (i.tieneSiguiente())
+            {
+                p = i.Siguiente();
+
+                if (p.Id == Id)
+                    return p;
+            }
+
+            return null;
+        }
+
         public object Iterador()
         {
-            throw new NotImplementedException();
+            return new IteradorColeccionPuntoCarga(this);
         }
     }
 }

@@ -13,13 +13,13 @@ namespace ocpp_server_control
             this.Mensaje = "[" + Estado + "] ";
 
             this.Estado = true;
-            this.Objeto = null;
+            this.Anexo = null;
         }
 
         public Boolean Estado { get; set; }
 
         public string Mensaje { get; set; }
 
-        public Object Objeto { get; set; }
+        public Object Anexo { get; set; }
     }
 }
