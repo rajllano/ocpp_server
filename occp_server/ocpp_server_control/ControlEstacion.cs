@@ -139,6 +139,7 @@ namespace ocpp_server_control
                     throw new Exception("Ya se encuentra asociado el Punto de Carga a la Estacion");
 
                 e.ColeccionPuntoCarga.Agregar(p);
+                r.Mensaje += "Se asocio correctamente a la Estacion " + EstacionId + " el PuntoCarga " + PuntoCargaId;
             }
             catch(Exception ex)
             {
@@ -153,6 +154,61 @@ namespace ocpp_server_control
             return r;
         }
 
-        
+        public static Respuesta EliminarPuntoCarga(string pEstacionId, string pPuntoCargaId)
+        {
+            Respuesta r = new Respuesta("ControlEstacion.EliminarPuntoCarga");
+
+            try
+            {
+                int EstacionId;
+
+                try
+                {
+                    EstacionId = Convert.ToInt32(pEstacionId);
+                }
+                catch
+                {
+                    throw new Exception("El EstacionId debe contener valores numericos");
+                }
+
+                int PuntoCargaId;
+
+                try
+                {
+                    PuntoCargaId = Convert.ToInt32(pPuntoCargaId);
+                }
+                catch
+                {
+                    throw new Exception("El PuntoCargaId debe contener valores numericos");
+                }
+
+                Estacion e = Servidor.getInstancia().ColeccionEstacion.BuscarPorId(EstacionId);
+
+                if (e == null)
+                    throw new Exception("No existe una Estacion con el Id " + EstacionId);
+
+                PuntoCarga p = Servidor.getInstancia().ColeccionPuntoCarga.BuscarPorId(PuntoCargaId);
+
+                if (p == null)
+                    throw new Exception("No existe el PuntoCarga con el Id " + PuntoCargaId);
+
+                if (e.ColeccionPuntoCarga.BuscarPorId(PuntoCargaId) == null)
+                    throw new Exception("No se encuentra asociado el Punto de Carga a la Estacion");
+
+                e.ColeccionPuntoCarga.Eliminar(p);
+                r.Mensaje += "Se elimino correctamente a la Estacion " + EstacionId + " el PuntoCarga " + PuntoCargaId;
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
     }
 }
