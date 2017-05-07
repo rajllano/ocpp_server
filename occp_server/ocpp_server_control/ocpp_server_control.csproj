@@ -43,6 +43,7 @@
     <Compile Include="ControlEstacion.cs" />
     <Compile Include="ControlLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Respuesta.cs" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

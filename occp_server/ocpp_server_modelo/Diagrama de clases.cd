@@ -191,7 +191,7 @@
     </TypeIdentifier>
   </Enum>
   <Enum Name="ocpp_server_modelo.EEstadoReserva">
-    <Position X="3.25" Y="10.75" Width="1.5" />
+    <Position X="0.75" Y="8.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEA=</HashCode>
       <FileName>EEstadoReserva.cs</FileName>

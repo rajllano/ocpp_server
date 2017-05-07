@@ -17,6 +17,11 @@ namespace ocpp_server_modelo
 
         public ColeccionPuntoCarga ColeccionPuntoCarga { get; set; }
 
+        public Estacion()
+        {
+            this.ColeccionPuntoCarga = new ColeccionPuntoCarga();
+        }
+
         public Estacion Clonar()
         {
             Estacion e = new Estacion();
