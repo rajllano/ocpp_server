@@ -28,10 +28,7 @@ namespace ocpp_server_modelo
             Indice++;
 
             if (Indice < this.Coleccion.Tamano())
-            {
-                Indice++;
                 return this.Coleccion.Elemento(Indice);
-            }
 
             return null;
         }

@@ -48,10 +48,6 @@
       <HashCode>AAACCBAAAAAAAAAAAAABAAAAAAAAAAAAAAhAAAAAAEA=</HashCode>
       <FileName>PuntoCarga.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Property Name="EEstadoPuntoCarga" />
-      <Property Name="EEstadoConectorPuntoCarga" />
-    </ShowAsAssociation>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="ocpp_server_modelo.ColeccionPuntoCarga">

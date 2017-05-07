@@ -7,81 +7,30 @@ namespace ocpp_server_modelo
 {
     public class PuntoCarga : IClonacion<PuntoCarga>
     {
-        public int Id
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public int Id { get; set; }
 
-            set
-            {
-            }
-        }
+        public string NumeroSerie { get; set; }
 
-        public string NumeroSerie
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public string Marca { get; set; }
 
-            set
-            {
-            }
-        }
+        public string Modelo { get; set; }
 
-        public string Marca
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
+        public EEstadoPuntoCarga EEstadoPuntoCarga { get; set; }
 
-            set
-            {
-            }
-        }
-
-        public string Modelo
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public EEstadoPuntoCarga EEstadoPuntoCarga
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
-
-        public EEstadoConectorPuntoCarga EEstadoConectorPuntoCarga
-        {
-            get
-            {
-                throw new System.NotImplementedException();
-            }
-
-            set
-            {
-            }
-        }
+        public EEstadoConectorPuntoCarga EEstadoConectorPuntoCarga { get; set; }
 
         public PuntoCarga Clonar()
         {
-            throw new NotImplementedException();
+            PuntoCarga p = new PuntoCarga();
+
+            p.Id = this.Id;
+            p.NumeroSerie = this.NumeroSerie;
+            p.Marca = this.Marca;
+            p.Modelo = this.Modelo;
+            p.EEstadoPuntoCarga = this.EEstadoPuntoCarga;
+            p.EEstadoConectorPuntoCarga = this.EEstadoConectorPuntoCarga;
+
+            return p;
         }
     }
 }
