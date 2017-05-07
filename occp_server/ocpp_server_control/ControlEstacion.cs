@@ -5,7 +5,7 @@ namespace ocpp_server_control
 {
     public static class ControlEstacion
     {
-        private static Respuesta Agregar(string pId, string pNombre, string pDireccion, string pUbicacion)
+        public static Respuesta Agregar(string pId, string pNombre, string pDireccion, string pUbicacion)
         {
             Respuesta r = new Respuesta("ControlEstacion.Agregar");
 
@@ -27,13 +27,13 @@ namespace ocpp_server_control
                 if (e != null)
                     throw new Exception("Ya existe una Estacion con el Id " + Id);
 
-                if(pNombre != null || pNombre.Length <= 0)
+                if(pNombre.Length <= 0)
                     throw new Exception("El campo Nombre es obligatorio");
 
-                if (pDireccion != null || pDireccion.Length <= 0)
+                if (pDireccion.Length <= 0)
                     throw new Exception("El campo Direccion es obligatorio");
 
-                if (pUbicacion != null || pUbicacion.Length <= 0)
+                if (pUbicacion.Length <= 0)
                     throw new Exception("El campo Ubicacion es obligatorio");
 
                 e = new Estacion();
@@ -59,7 +59,7 @@ namespace ocpp_server_control
             return r;
         }
 
-        private static Respuesta Eliminar(string pId)
+        public static Respuesta Eliminar(string pId)
         {
             Respuesta r = new Respuesta("ControlEstacion.Eliminar");
 

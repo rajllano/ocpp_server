@@ -20,18 +20,18 @@ namespace ocpp_server_control
             NombreArchivo += Fecha.Year.ToString() + "_";
             NombreArchivo += Fecha.Hour.ToString().PadLeft(2, '0');
 
-            Linea = "[" + Fecha.ToString() + "] ";
-
             if (r.Estado)
                 Linea += "[INFO] ";
             else
                 Linea += "[ERROR] ";
 
+            Linea += "[" + Fecha.ToString() + "] ";
+
             Linea += r.Mensaje;
 
             try
             {
-                StreamWriter Archivo = new StreamWriter(@"C:\Log\" + NombreArchivo + ".txt");
+                StreamWriter Archivo = new StreamWriter(@"C:\Log\" + NombreArchivo + ".txt", true, Encoding.ASCII);
 
                 Archivo.WriteLine(Linea);
                 Archivo.Close();

@@ -89,6 +89,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -786,11 +787,22 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Simulador OCPP Server";
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(604, 85);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Servidor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 550);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(546, 589);
@@ -884,5 +896,6 @@
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button button3;
     }
 }
