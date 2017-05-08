@@ -43,6 +43,7 @@
     <Compile Include="ControlEstacion.cs" />
     <Compile Include="ControlLog.cs" />
     <Compile Include="ControlPuntoCarga.cs" />
+    <Compile Include="ControlReserva.cs" />
     <Compile Include="ControlVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respuesta.cs" />
