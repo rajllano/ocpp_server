@@ -117,5 +117,59 @@ namespace ocpp_server_control
 
             return r;
         }
+
+        public static Respuesta BuscarPorPlaca(string pPlaca)
+        {
+            Respuesta r = new Respuesta("ControlVehiculo.BuscarPorPlaca");
+
+            try
+            {
+                Vehiculo v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorPlaca(pPlaca);
+
+                if(v == null)
+                    throw new Exception("No existe un vehiculo con esa placa");
+
+                r.Anexo = v;
+                r.Mensaje = "Vehiculo encontrado";
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
+
+        public static Respuesta BuscarPorTag(string pTag)
+        {
+            Respuesta r = new Respuesta("ControlVehiculo.BuscarPorTag");
+
+            try
+            {
+                Vehiculo v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorTag(pTag);
+
+                if (v == null)
+                    throw new Exception("No existe vehiculo con ese Tag");
+
+                r.Anexo = v;
+                r.Mensaje = "Vehiculo encontrado";
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
     }
 }

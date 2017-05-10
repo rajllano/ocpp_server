@@ -807,6 +807,7 @@
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(546, 589);
             this.Name = "Servidor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Servidor";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

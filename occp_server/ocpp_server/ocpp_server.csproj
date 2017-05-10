@@ -65,6 +65,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPuntoCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPuntoCarga.Designer.cs">
+      <DependentUpon>frmPuntoCarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehiculo.Designer.cs">
+      <DependentUpon>frmVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -78,6 +96,12 @@
     <Compile Include="Servidor.Designer.cs">
       <DependentUpon>Servidor.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVehiculo.resx">
+      <DependentUpon>frmVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -125,6 +149,20 @@
       <Project>{ad9bf7e7-3055-40b4-868a-84187fa31546}</Project>
       <Name>ocpp_server_control</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ocpp_server_modelo\ocpp_server_modelo.csproj">
+      <Project>{391de895-00b4-4035-974e-965e78cb8b36}</Project>
+      <Name>ocpp_server_modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\carro.png" />
+    <Content Include="Resources\gasolinera.png" />
+    <Content Include="Resources\log.png" />
+    <Content Include="Resources\reloj.png" />
+    <Content Include="Resources\salir.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

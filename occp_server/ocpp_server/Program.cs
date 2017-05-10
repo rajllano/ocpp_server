@@ -18,7 +18,7 @@ namespace ocpp_server
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Servidor());
+            Application.Run(new frmPrincipal());
         }
     }
 }
