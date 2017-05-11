@@ -1,4 +1,10 @@
-﻿using System;
+﻿/**
+ * Clase: Respuesta.cs
+ * Objetivo: encapsular objetos de tipo respuesta que me 
+ * permitiran hacer gestión sobre los logs del sistema.
+ * Fecha modificación: Mayo de 2017
+ **/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

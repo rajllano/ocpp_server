@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+ * Clase: Coleccion.cs
+ * Objetivo: Clase con la definición de colección y la gestión de la misma.
+ * Fecha modificación: Mayo de 2017
+ **/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

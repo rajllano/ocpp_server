@@ -1,4 +1,9 @@
-﻿using ocpp_server_modelo;
+﻿/**
+ * Clase: ControlEstacion.cs
+ * Objetivo: Clase de control para la gestión de estaciones.
+ * Fecha modificación: Mayo de 2017
+ **/
+using ocpp_server_modelo;
 using System;
 
 namespace ocpp_server_control

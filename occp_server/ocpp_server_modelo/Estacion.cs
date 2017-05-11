@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+ * Clase: Estacion.cs
+ * Objetivo: Clase que define una estacion e implementa clonación.
+ * Fecha modificación: Mayo de 2017
+ **/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+ * Clase: ColeccionReserva.cs
+ * Objetivo: Claseque hereda y define colección de reservas y la gestión de iteración de las coleccion.
+ * Fecha modificación: Mayo de 2017
+ **/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

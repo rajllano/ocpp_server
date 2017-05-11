@@ -1,4 +1,9 @@
-﻿using ocpp_server_modelo;
+﻿/**
+ * Clase: ControlReserva.cs
+ * Objetivo: Clase de control para la gestión de los reservas.
+ * Fecha modificación: Mayo de 2017
+ **/
+using ocpp_server_modelo;
 using System;
 using System.Collections.Generic;
 using System.Linq;

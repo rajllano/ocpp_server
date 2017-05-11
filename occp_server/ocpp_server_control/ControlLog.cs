@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+ * Clase: ControlLog.cs
+ * Objetivo: Clase de control para los logs, basicamente permite la creación de logs horarios.
+ * Fecha modificación: Mayo de 2017
+ **/
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;

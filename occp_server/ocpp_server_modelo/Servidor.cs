@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+ * Clase: Servidor.cs
+ * Objetivo: Clase principal de acceso a todo el modelo.
+ * Fecha modificación: Mayo de 2017
+ **/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
