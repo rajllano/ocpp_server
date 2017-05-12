@@ -16,6 +16,8 @@ namespace ocpp_server
         [STAThread]
         static void Main()
         {
+            ControlSimulacion.Vehiculos(100);
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmPrincipal());
