@@ -77,6 +77,12 @@
     <Compile Include="frmPuntoCarga.Designer.cs">
       <DependentUpon>frmPuntoCarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSimulacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSimulacion.Designer.cs">
+      <DependentUpon>frmSimulacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
     </Compile>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSimulacion.resx">
+      <DependentUpon>frmSimulacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVehiculo.resx">
       <DependentUpon>frmVehiculo.cs</DependentUpon>

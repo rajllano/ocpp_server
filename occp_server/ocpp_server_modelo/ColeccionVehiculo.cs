@@ -39,6 +39,24 @@ namespace ocpp_server_modelo
             return null;
         }
 
+        public Vehiculo Aleatorio()
+        {
+            Vehiculo v = null;
+            IteradorColeccionVehiculo i = (IteradorColeccionVehiculo)Iterador();
+
+            while (i.tieneSiguiente())
+            {
+                v = i.Siguiente();
+
+                if (v != null)
+                    return v;
+            }
+
+            v = new Vehiculo();
+
+            return v;
+        }
+
         public object Iterador()
         {
             return new IteradorColeccionVehiculo(this);

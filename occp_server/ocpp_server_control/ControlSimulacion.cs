@@ -14,32 +14,56 @@ namespace ocpp_server_control
         {
             Respuesta r = new Respuesta("ControlSimulacion.Vehiculos");
 
+            Dictionary<int, string> ListaMarcas;
+            Dictionary<int, string> ListaNombres;
+            Dictionary<int, string> ListaApellidos;
+
             try
             {
-                Dictionary<int, string> ListaMarcas = CargarArchivo(@"C:\Simulacion\Marcas.txt");
-                Dictionary<int, string> ListaNombres = CargarArchivo(@"C:\Simulacion\Nombres.txt");
-                Dictionary<int, string> ListaApellidos = CargarArchivo(@"C:\Simulacion\Apellidos.txt");
+                ListaMarcas = CargarArchivo(@"C:\Simulacion\Marcas.txt");
+                ListaNombres = CargarArchivo(@"C:\Simulacion\Nombres.txt");
+                ListaApellidos = CargarArchivo(@"C:\Simulacion\Apellidos.txt");
 
                 int Contador = 0;
-                string Placa;
-                string Tag;
-                string Marca;
-                string Modelo;
-                string Propietario;
+                string Placa = "";
+                string Tag = "";
+                string Marca = "";
+                string Modelo = "";
+                string Propietario = "";
                 Random rm = new Random(DateTime.Now.Millisecond);
                 Respuesta res;
+                Vehiculo v;
 
                 while(true)
                 {
-                    Placa = PlacaAleatoria(rm);
-                    Tag = TagAleatorio(rm);
-                    Marca = ListaMarcas[rm.Next(1, ListaMarcas.Count)];
-                    Modelo = rm.Next(1990, 2017).ToString();
+                    if (Contador % 2 == 0)
+                    {
+                        Placa = PlacaAleatoria(rm);
+                        Tag = TagAleatorio(rm);
+                        Marca = ListaMarcas[rm.Next(1, ListaMarcas.Count)];
+                        Modelo = rm.Next(1990, 2017).ToString();
 
-                    Propietario = ListaNombres[rm.Next(1, ListaNombres.Count)] + " ";
-                    Propietario += ListaApellidos[rm.Next(1,ListaApellidos.Count)];
+                        Propietario = ListaNombres[rm.Next(1, ListaNombres.Count)] + " ";
+                        Propietario += ListaApellidos[rm.Next(1, ListaApellidos.Count)];
 
-                    res = ControlVehiculo.Agregar(Placa, Tag, Marca, Modelo, Propietario);
+                        Propietario = ListaNombres[rm.Next(1, ListaNombres.Count)] + " ";
+                        Propietario += ListaApellidos[rm.Next(1, ListaApellidos.Count)];
+
+                        res = ControlVehiculo.Agregar(Placa, Tag, Marca, Modelo, Propietario);
+                    }
+                    else
+                    {
+                        v = Servidor.getInstancia().ColeccionVehiculo.Aleatorio();
+
+                        v.Placa = PlacaAleatoria(rm);
+                        v.Tag = TagAleatorio(rm);
+                        v.Marca = ListaMarcas[rm.Next(1, ListaMarcas.Count)];
+                        v.Modelo = rm.Next(1990, 2017).ToString();
+                        v.Propietario = ListaNombres[rm.Next(1, ListaNombres.Count)] +" ";
+                        Propietario += ListaApellidos[rm.Next(1, ListaApellidos.Count)];
+
+                        res = ControlVehiculo.Agregar(v);
+                    }
 
                     if (res.Estado == true)
                         Contador++;
@@ -48,8 +72,56 @@ namespace ocpp_server_control
                         break;
                 }
 
-                //Servidor.getInstancia().ColeccionPuntoCarga.Eliminar(p);
-                r.Mensaje += "Se finalizo la creacion de Vehiculos";
+                r.Mensaje += "Se realizo la simulacion de " + Cantidad + " Vehiculos";
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+
+                ListaMarcas = null; 
+                ListaNombres = null;
+                ListaApellidos = null;
+
+                GC.Collect();
+            }
+
+            return r;
+        }
+
+        public static Respuesta Estacion(int CantidadEstacion, int CantidadPuntosCarga)
+        {
+            Respuesta r = new Respuesta("ControlSimulacion.Estacion");
+
+            Dictionary<int, string> ListaEstaciones;
+
+            try
+            {
+                Random rm = new Random(DateTime.Now.Millisecond);
+                ListaEstaciones = CargarArchivo(@"C:\Simulacion\Estaciones.txt");
+
+                string Nombre = "";
+                string Direccion = "";
+                string Ubicacion = "";
+
+                int ContadorEstacion = 0, ContadorPuntoCarga = 0;
+
+                Respuesta res1, res2;
+
+                for(int x=1;x<=CantidadEstacion;x++)
+                {
+                    Nombre = ListaEstaciones[rm.Next(0, ListaEstaciones.Count - 1)];
+                    Direccion = DireccionAleatoria(rm);
+                    Ubicacion = PosicionAleatoria(rm);
+
+                    res1 = ControlEstacion.Agregar(x.ToString(), Nombre, Direccion, Ubicacion);
+                }
+
+                r.Mensaje += "Se realizo la simulacion de " + CantidadEstacion + " Estaciones";
             }
             catch (Exception ex)
             {
@@ -62,6 +134,39 @@ namespace ocpp_server_control
             }
 
             return r;
+        }
+
+        private static string PosicionAleatoria(Random r)
+        {
+            string Grados = r.Next(-90,90).ToString();
+            string Minutos = r.Next(0, 60).ToString();
+            string Segundos = r.Next(0, 60).ToString();
+
+            return Grados + "° " + Minutos + "' " + Segundos + "''";
+        }
+
+        private static string DireccionAleatoria(Random r)
+        {
+            string[] Notaciones = {"CALLE","CL", "CARRERA", "CR", "CRA", "AV" ,"DIAGONAL", "TRANVERSAL", "TRONCAL"};
+            string Respuesta = ""; 
+
+            for (int x = 1; x <= 3; x++)
+            {
+                switch(x)
+                {
+                    case 1:
+                        Respuesta += Notaciones[r.Next(0,Notaciones.Length-1)] + " ";
+                        break;
+                    case 2:
+                        Respuesta += r.Next(1, 100);
+                        break;
+                    case 3:
+                        Respuesta += " NO " + r.Next(1, 200) + "-" + r.Next(1, 200); 
+                        break;
+                }
+            }
+
+            return Respuesta;
         }
 
         private static Dictionary<int,string> CargarArchivo(string RutaArchivo)

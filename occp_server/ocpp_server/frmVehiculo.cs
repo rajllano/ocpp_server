@@ -105,15 +105,48 @@ namespace ocpp_server
 
         private void frmVehiculo_Paint(object sender, PaintEventArgs e)
         {
-            txtPlaca.Focus();
+            
         }
 
         private void txtPlaca_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            /*if (e.KeyCode == Keys.Enter)
             {
                 txtTag.Focus();
+            }*/
+        }
+
+        private void txtTag_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            Respuesta r = ControlVehiculo.Listar();
+
+            if (r.Estado)
+            {
+                ColeccionVehiculo cv = (ColeccionVehiculo)r.Anexo;
+                Vehiculo v;
+
+                IteradorColeccionVehiculo i = (IteradorColeccionVehiculo)cv.Iterador();
+
+                this.dgvLista.Columns.Add("Placa","Placa");
+                this.dgvLista.Columns.Add("Tag","Tag");
+                this.dgvLista.Columns.Add("Modelo", "Modelo");
+                this.dgvLista.Columns.Add("Marca", "Marca");
+                this.dgvLista.Columns.Add("Propietario", "Propietario");
+
+                while (i.tieneSiguiente())
+                {
+                    v = i.Siguiente();
+
+                    this.dgvLista.Rows.Add(v.Placa,v.Tag,v.Modelo, v.Marca,v.Propietario);
+                }
             }
+            else
+                MessageBox.Show(r.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
     }
 }

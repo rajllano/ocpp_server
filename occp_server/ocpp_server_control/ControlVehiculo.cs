@@ -9,6 +9,11 @@ namespace ocpp_server_control
 {
     public static class ControlVehiculo
     {
+        public static Respuesta Agregar(Vehiculo v)
+        {
+            return Agregar(v.Placa, v.Tag, v.Marca, v.Modelo, v.Propietario);
+        }
+
         public static Respuesta Agregar(string pPlaca, string pTag, string pMarca, string pModelo, string pPropietario)
         {
             Respuesta r = new Respuesta("ControlVehiculo.Agregar");
@@ -158,6 +163,33 @@ namespace ocpp_server_control
 
                 r.Anexo = v;
                 r.Mensaje = "Vehiculo encontrado";
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
+
+        public static Respuesta Listar()
+        {
+            Respuesta r = new Respuesta("ControlVehiculo.Listar");
+
+            try
+            {
+                ColeccionVehiculo cv = Servidor.getInstancia().ColeccionVehiculo;
+
+                if(cv.Tamano() == 0)
+                    throw new Exception("No existen vehiculos");
+
+                r.Anexo = cv;
+                r.Mensaje = "Operacion realizada con exito";
             }
             catch (Exception ex)
             {

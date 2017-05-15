@@ -1,9 +1,4 @@
-﻿using ocpp_server_control;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace ocpp_server
@@ -16,8 +11,6 @@ namespace ocpp_server
         [STAThread]
         static void Main()
         {
-            ControlSimulacion.Vehiculos(100);
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmPrincipal());
