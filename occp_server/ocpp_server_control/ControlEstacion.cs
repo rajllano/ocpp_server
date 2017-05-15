@@ -5,6 +5,11 @@ namespace ocpp_server_control
 {
     public static class ControlEstacion
     {
+        public static Respuesta Agregar(Estacion e)
+        {
+            return Agregar(e.Id.ToString(),e.Nombre,e.Direccion,e.Ubicacion);
+        }
+
         public static Respuesta Agregar(string pId, string pNombre, string pDireccion, string pUbicacion)
         {
             Respuesta r = new Respuesta("ControlEstacion.Agregar");

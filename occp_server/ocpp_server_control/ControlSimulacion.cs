@@ -98,27 +98,61 @@ namespace ocpp_server_control
             Respuesta r = new Respuesta("ControlSimulacion.Estacion");
 
             Dictionary<int, string> ListaEstaciones;
+            Dictionary<int, string> ListaMarcas;
 
             try
             {
                 Random rm = new Random(DateTime.Now.Millisecond);
                 ListaEstaciones = CargarArchivo(@"C:\Simulacion\Estaciones.txt");
+                ListaMarcas = CargarArchivo(@"C:\Simulacion\MarcasPuntoCarga.txt");
 
+                int IdEstacion = 0;
+                int IdPuntoCarga = 0;
                 string Nombre = "";
                 string Direccion = "";
                 string Ubicacion = "";
+                int Contador = 0;
 
-                int ContadorEstacion = 0, ContadorPuntoCarga = 0;
+                Respuesta res1;
+                Estacion e;
 
-                Respuesta res1, res2;
-
-                for(int x=1;x<=CantidadEstacion;x++)
+                while(true)
                 {
-                    Nombre = ListaEstaciones[rm.Next(0, ListaEstaciones.Count - 1)];
-                    Direccion = DireccionAleatoria(rm);
-                    Ubicacion = PosicionAleatoria(rm);
+                    IdEstacion++;
 
-                    res1 = ControlEstacion.Agregar(x.ToString(), Nombre, Direccion, Ubicacion);
+                    if(Contador % 2 == 0)
+                    {
+                        Nombre = ListaEstaciones[rm.Next(0, ListaEstaciones.Count - 1)];
+                        Direccion = DireccionAleatoria(rm);
+                        Ubicacion = PosicionAleatoria(rm);
+
+                        res1 = ControlEstacion.Agregar(IdEstacion.ToString(), Nombre, Direccion, Ubicacion);
+                    }
+                    else
+                    {
+                        e = Servidor.getInstancia().ColeccionEstacion.Aleatorio();
+
+                        e.Id = IdEstacion;
+                        e.Nombre = ListaEstaciones[rm.Next(0, ListaEstaciones.Count - 1)];
+                        e.Direccion = DireccionAleatoria(rm);
+                        e.Ubicacion = PosicionAleatoria(rm);
+
+                        res1 = ControlEstacion.Agregar(e);
+                    }
+
+                    if (res1.Estado == true)
+                    {
+                        Contador++;
+
+                        e = Servidor.getInstancia().ColeccionEstacion.BuscarPorId(IdEstacion);
+
+                        res1 = PuntoCarga(ListaMarcas, e, CantidadPuntosCarga, IdPuntoCarga, rm);
+
+                        IdPuntoCarga = (int)res1.Anexo;
+                    }
+
+                    if (Contador == CantidadEstacion)
+                        break;
                 }
 
                 r.Mensaje += "Se realizo la simulacion de " + CantidadEstacion + " Estaciones";
@@ -134,6 +168,75 @@ namespace ocpp_server_control
             }
 
             return r;
+        }
+
+
+        private static Respuesta PuntoCarga(Dictionary<int,string> ListaMarcas,Estacion e, int Cantidad, int pId, Random ram)
+        {
+            Respuesta r = new Respuesta("ControlSimulacion.PuntoCarga");
+
+            try
+            {
+                int Id = pId;
+                string NumeroSerie = "";
+                string Marca = "";
+                string Modelo = "";
+                int Contador = 0;
+
+                Respuesta res;
+
+                PuntoCarga pc = new PuntoCarga();
+
+                while (true)
+                {
+                    NumeroSerie = NumeroSerieAleatorio(ram);
+                    Marca = ListaMarcas[ram.Next(0, ListaMarcas.Count - 1)];
+                    Modelo = ram.Next(1990, 2016).ToString();
+
+                    res = ControlPuntoCarga.Agregar(Id.ToString(), NumeroSerie, Marca, Modelo);
+
+                    if (res.Estado == true)
+                    {
+                        Contador++;
+
+                        pc = Servidor.getInstancia().ColeccionPuntoCarga.BuscarPorId(Id);
+
+                        e.ColeccionPuntoCarga.Agregar(pc);
+                    }
+
+                    Id++;
+
+                    if (Contador == Cantidad)
+                        break;
+                }
+
+                r.Mensaje += "Se realizo la simulacion de " + Cantidad + " Estaciones";
+                r.Anexo = Id + 1;
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
+
+        private static string NumeroSerieAleatorio(Random r)
+        {
+            string Caracteres = "AEIOU0123456789-/*|#";
+            string Respuesta = "";
+
+            for (int x = 1; x <= 15; x++)
+            {
+                Respuesta += Caracteres[r.Next(0, Caracteres.Length - 1)];
+            }
+
+            return Respuesta;
         }
 
         private static string PosicionAleatoria(Random r)
