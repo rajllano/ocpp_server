@@ -39,7 +39,7 @@ namespace ocpp_server_control
                 p.Modelo = pModelo;
 
                 Servidor.getInstancia().ColeccionPuntoCarga.Agregar(p);
-                r.Anexo2.Add("PuntoCarga",p);
+                r.Anexo.Add("PuntoCarga",p);
                 r.Mensaje += "Se agrego el exitosamente el PuntoCarga con Id " + Id;
             }
             catch (Exception ex)

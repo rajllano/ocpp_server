@@ -141,7 +141,7 @@ namespace ocpp_server_control
                     {
                         Contador++;
 
-                        e = (Estacion)res.Anexo2["Estacion"];
+                        e = (Estacion)res.Anexo["Estacion"];
 
                         res = PuntoCarga(ListaMarcas, e, CantidadPuntosCarga, rm);
                     }
@@ -193,7 +193,7 @@ namespace ocpp_server_control
                     {
                         Contador++;
 
-                        pc = (PuntoCarga)res.Anexo2["PuntoCarga"];
+                        pc = (PuntoCarga)res.Anexo["PuntoCarga"];
 
                         e.ColeccionPuntoCarga.Agregar(pc);
                     }

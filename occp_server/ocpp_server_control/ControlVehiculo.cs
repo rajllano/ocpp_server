@@ -54,7 +54,7 @@ namespace ocpp_server_control
                 v.Propietario = pPropietario;
 
                 Servidor.getInstancia().ColeccionVehiculo.Agregar(v);
-                r.Anexo2.Add("Vehiculo", v);
+                r.Anexo.Add("Vehiculo", v);
                 r.Mensaje += "Se agrego el exitosamente el Vehiculo de placa " + pPlaca + " y Tag " + pTag;
             }
             catch (Exception ex)
@@ -135,7 +135,7 @@ namespace ocpp_server_control
                 if(v == null)
                     throw new Exception("No existe un vehiculo de placa " + pPlaca);
 
-                r.Anexo = v;
+                r.Anexo.Add("Vehiculo",v);
                 r.Mensaje = "El vehiculo de placa " + pPlaca + " fue encontrado";
             }
             catch (Exception ex)
@@ -162,7 +162,7 @@ namespace ocpp_server_control
                 if (v == null)
                     throw new Exception("No existe vehiculo con el Tag " + pTag);
 
-                r.Anexo = v;
+                r.Anexo.Add("Vehiculo",v);
                 r.Mensaje = "Vehiculo con el Tag " + pTag + " fue encontrado";
             }
             catch (Exception ex)
@@ -189,8 +189,8 @@ namespace ocpp_server_control
                 if(cv.Tamano() == 0)
                     throw new Exception("No existen vehiculos");
 
-                r.Anexo = cv;
-                r.Mensaje = "Operacion realizada con exito";
+                r.Anexo.Add("ColeccionVehiculo", cv);
+                r.Mensaje = "Cantidad de vehiculos " + cv.Tamano();
             }
             catch (Exception ex)
             {

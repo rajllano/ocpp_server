@@ -51,7 +51,7 @@ namespace ocpp_server
             {
                 LimpiarCampos();
 
-                Vehiculo v = (Vehiculo)r.Anexo;
+                Vehiculo v = (Vehiculo)r.Anexo["Vehiculo"];
 
                 txtPlaca.Text = v.Placa;
                 txtTag.Text = v.Tag;
@@ -84,7 +84,7 @@ namespace ocpp_server
             {
                 LimpiarCampos();
 
-                Vehiculo v = (Vehiculo)r.Anexo;
+                Vehiculo v = (Vehiculo)r.Anexo["Vehiculo"];
 
                 txtPlaca.Text = v.Placa;
                 txtTag.Text = v.Tag;
@@ -110,10 +110,7 @@ namespace ocpp_server
 
         private void txtPlaca_KeyDown(object sender, KeyEventArgs e)
         {
-            /*if (e.KeyCode == Keys.Enter)
-            {
-                txtTag.Focus();
-            }*/
+            
         }
 
         private void txtTag_TextChanged(object sender, EventArgs e)
@@ -127,16 +124,18 @@ namespace ocpp_server
 
             if (r.Estado)
             {
-                ColeccionVehiculo cv = (ColeccionVehiculo)r.Anexo;
+                ColeccionVehiculo cv = (ColeccionVehiculo)r.Anexo["Vehiculo"];
                 Vehiculo v;
 
-                IteradorColeccionVehiculo i = (IteradorColeccionVehiculo)cv.Iterador();
+                this.dgvLista.Columns.Clear();
 
                 this.dgvLista.Columns.Add("Placa","Placa");
                 this.dgvLista.Columns.Add("Tag","Tag");
                 this.dgvLista.Columns.Add("Modelo", "Modelo");
                 this.dgvLista.Columns.Add("Marca", "Marca");
                 this.dgvLista.Columns.Add("Propietario", "Propietario");
+
+                IteradorColeccionVehiculo i = (IteradorColeccionVehiculo)cv.Iterador();
 
                 while (i.tieneSiguiente())
                 {

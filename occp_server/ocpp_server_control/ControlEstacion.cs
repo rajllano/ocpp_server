@@ -41,7 +41,7 @@ namespace ocpp_server_control
 
                 Servidor.getInstancia().ColeccionEstacion.Agregar(e);
 
-                r.Anexo2.Add("Estacion", e);
+                r.Anexo.Add("Estacion", e);
                 r.Mensaje += "Se agrego el exitosamente la Estacion con Id " + Id;
             }
             catch(Exception ex)
