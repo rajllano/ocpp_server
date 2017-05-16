@@ -87,6 +87,7 @@
             this.txtCantidadEstaciones.Name = "txtCantidadEstaciones";
             this.txtCantidadEstaciones.Size = new System.Drawing.Size(177, 20);
             this.txtCantidadEstaciones.TabIndex = 5;
+            this.txtCantidadEstaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadEstaciones_KeyPress);
             // 
             // txtCantidadPuntosCarga
             // 
@@ -94,6 +95,7 @@
             this.txtCantidadPuntosCarga.Name = "txtCantidadPuntosCarga";
             this.txtCantidadPuntosCarga.Size = new System.Drawing.Size(177, 20);
             this.txtCantidadPuntosCarga.TabIndex = 6;
+            this.txtCantidadPuntosCarga.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadPuntosCarga_KeyPress);
             // 
             // txtCantidadVehiculos
             // 
@@ -101,6 +103,7 @@
             this.txtCantidadVehiculos.Name = "txtCantidadVehiculos";
             this.txtCantidadVehiculos.Size = new System.Drawing.Size(177, 20);
             this.txtCantidadVehiculos.TabIndex = 7;
+            this.txtCantidadVehiculos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadVehiculos_KeyPress);
             // 
             // label4
             // 
@@ -117,6 +120,7 @@
             this.txtCantidadReservas.Name = "txtCantidadReservas";
             this.txtCantidadReservas.Size = new System.Drawing.Size(177, 20);
             this.txtCantidadReservas.TabIndex = 9;
+            this.txtCantidadReservas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadReservas_KeyPress);
             // 
             // txtProgreso
             // 
