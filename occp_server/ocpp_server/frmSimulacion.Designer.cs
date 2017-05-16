@@ -41,6 +41,7 @@
             this.txtProgreso = new System.Windows.Forms.TextBox();
             this.btnInicializar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.HiloSimulacion = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // label1
@@ -184,5 +185,6 @@
         private System.Windows.Forms.TextBox txtProgreso;
         private System.Windows.Forms.Button btnInicializar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.ComponentModel.BackgroundWorker HiloSimulacion;
     }
 }

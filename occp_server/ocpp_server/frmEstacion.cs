@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ocpp_server
 {
-    public partial class frmPuntoCarga : Form
+    public partial class frmEstacion : Form
     {
-        public frmPuntoCarga()
+        public frmEstacion()
         {
             InitializeComponent();
         }

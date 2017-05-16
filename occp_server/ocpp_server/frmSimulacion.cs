@@ -28,19 +28,25 @@ namespace ocpp_server
             //Vehiculos
             ///////////
 
-            /*txtProgreso.AppendText("Simulacion de vehiculos... INICIADA" + Environment.NewLine);
-            r = ControlSimulacion.Vehiculos(Convert.ToInt32(txtCantidadVehiculos.Text));
-            txtProgreso.AppendText(r.Mensaje + Environment.NewLine);
-            txtProgreso.AppendText("Simulacion de vehiculos... TERMINADA" + Environment.NewLine + Environment.NewLine);*/
-
+            if(txtCantidadVehiculos.Text.Trim().Length>0)
+            {
+                txtProgreso.AppendText("Simulacion de vehiculos... INICIADA" + Environment.NewLine);
+                r = ControlSimulacion.Vehiculos(Convert.ToInt32(txtCantidadVehiculos.Text));
+                txtProgreso.AppendText(r.Mensaje + Environment.NewLine);
+                txtProgreso.AppendText("Simulacion de vehiculos... TERMINADA" + Environment.NewLine + Environment.NewLine);
+            }
+            
             ///////////////////////////////
             //Estaciones y Puntos de Carga
             ///////////////////////////////
 
-            txtProgreso.AppendText("Simulacion de Estacion y Puntos Carga... INICIADA" + Environment.NewLine);
-            r = ControlSimulacion.Estacion(Convert.ToInt32(txtCantidadEstaciones.Text),Convert.ToInt32(txtCantidadPuntosCarga.Text));
-            txtProgreso.AppendText(r.Mensaje + Environment.NewLine);
-            txtProgreso.AppendText("Simulacion de Estacion y Puntos Carga... TERMINADA" + Environment.NewLine);
+            if(txtCantidadEstaciones.Text.Trim().Length > 0 && txtCantidadPuntosCarga.Text.Trim().Length > 0)
+            {
+                txtProgreso.AppendText("Simulacion de Estacion y Puntos Carga... INICIADA" + Environment.NewLine);
+                r = ControlSimulacion.Estacion(Convert.ToInt32(txtCantidadEstaciones.Text), Convert.ToInt32(txtCantidadPuntosCarga.Text));
+                txtProgreso.AppendText(r.Mensaje + Environment.NewLine);
+                txtProgreso.AppendText("Simulacion de Estacion y Puntos Carga... TERMINADA" + Environment.NewLine);
+            }
         }
 
         private void btnInicializar_Click(object sender, EventArgs e)

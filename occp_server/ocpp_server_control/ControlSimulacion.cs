@@ -36,8 +36,8 @@ namespace ocpp_server_control
 
                 while(true)
                 {
-                    //if (x % 2 == 0)
-                    //{
+                    if (Contador % 2 == 0)
+                    {
                         Placa = PlacaAleatoria(rm);
                         Tag = TagAleatorio(rm);
                         Marca = ListaMarcas[rm.Next(1, ListaMarcas.Count)];
@@ -47,10 +47,10 @@ namespace ocpp_server_control
                         Propietario += ListaApellidos[rm.Next(1, ListaApellidos.Count)];
 
                         res = ControlVehiculo.Agregar(Placa, Tag, Marca, Modelo, Propietario);
-                    /*}
+                    }
                     else
                     {
-                        v = Servidor.getInstancia().ColeccionVehiculo.Elemento(Contador - 1);
+                        v = Servidor.getInstancia().ColeccionVehiculo.Elemento(Contador - 1).Clonar();
 
                         if (v == null)
                             v = new Vehiculo();
@@ -64,7 +64,7 @@ namespace ocpp_server_control
                         Propietario += ListaApellidos[rm.Next(1, ListaApellidos.Count)];
 
                         res = ControlVehiculo.Agregar(v);
-                    }*/
+                    }
 
                     if (res.Estado == true)
                         Contador++;
@@ -117,25 +117,24 @@ namespace ocpp_server_control
 
                 while(true)
                 {
-                    //if(Contador % 2 == 0)
-                    //{
+                    if(Contador % 2 == 0)
+                    {
                         Nombre = ListaEstaciones[rm.Next(0, ListaEstaciones.Count - 1)];
                         Direccion = DireccionAleatoria(rm);
                         Ubicacion = PosicionAleatoria(rm);
 
                         res = ControlEstacion.Agregar(Nombre, Direccion, Ubicacion);
-                    /*}
+                    }
                     else
                     {
-                        e = Servidor.getInstancia().ColeccionEstacion.Aleatorio();
+                        e = Servidor.getInstancia().ColeccionEstacion.Elemento(Contador - 1).Clonar();
 
-                        e.Id = IdEstacion;
                         e.Nombre = ListaEstaciones[rm.Next(0, ListaEstaciones.Count - 1)];
                         e.Direccion = DireccionAleatoria(rm);
                         e.Ubicacion = PosicionAleatoria(rm);
 
-                        res1 = ControlEstacion.Agregar(e);
-                    }*/
+                        res = ControlEstacion.Agregar(e);
+                    }
 
                     if (res.Estado)
                     {
