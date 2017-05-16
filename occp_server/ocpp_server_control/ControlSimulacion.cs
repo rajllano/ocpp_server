@@ -36,8 +36,8 @@ namespace ocpp_server_control
 
                 while(true)
                 {
-                    if (Contador % 2 == 0)
-                    {
+                    //if (x % 2 == 0)
+                    //{
                         Placa = PlacaAleatoria(rm);
                         Tag = TagAleatorio(rm);
                         Marca = ListaMarcas[rm.Next(1, ListaMarcas.Count)];
@@ -46,24 +46,25 @@ namespace ocpp_server_control
                         Propietario = ListaNombres[rm.Next(1, ListaNombres.Count)] + " ";
                         Propietario += ListaApellidos[rm.Next(1, ListaApellidos.Count)];
 
-                        Propietario = ListaNombres[rm.Next(1, ListaNombres.Count)] + " ";
-                        Propietario += ListaApellidos[rm.Next(1, ListaApellidos.Count)];
-
                         res = ControlVehiculo.Agregar(Placa, Tag, Marca, Modelo, Propietario);
-                    }
+                    /*}
                     else
                     {
-                        v = Servidor.getInstancia().ColeccionVehiculo.Aleatorio();
+                        v = Servidor.getInstancia().ColeccionVehiculo.Elemento(Contador - 1);
+
+                        if (v == null)
+                            v = new Vehiculo();
 
                         v.Placa = PlacaAleatoria(rm);
                         v.Tag = TagAleatorio(rm);
                         v.Marca = ListaMarcas[rm.Next(1, ListaMarcas.Count)];
                         v.Modelo = rm.Next(1990, 2017).ToString();
+
                         v.Propietario = ListaNombres[rm.Next(1, ListaNombres.Count)] +" ";
                         Propietario += ListaApellidos[rm.Next(1, ListaApellidos.Count)];
 
                         res = ControlVehiculo.Agregar(v);
-                    }
+                    }*/
 
                     if (res.Estado == true)
                         Contador++;
@@ -106,28 +107,24 @@ namespace ocpp_server_control
                 ListaEstaciones = CargarArchivo(@"C:\Simulacion\Estaciones.txt");
                 ListaMarcas = CargarArchivo(@"C:\Simulacion\MarcasPuntoCarga.txt");
 
-                int IdEstacion = 0;
-                int IdPuntoCarga = 0;
                 string Nombre = "";
                 string Direccion = "";
                 string Ubicacion = "";
                 int Contador = 0;
 
-                Respuesta res1;
+                Respuesta res;
                 Estacion e;
 
                 while(true)
                 {
-                    IdEstacion++;
-
-                    if(Contador % 2 == 0)
-                    {
+                    //if(Contador % 2 == 0)
+                    //{
                         Nombre = ListaEstaciones[rm.Next(0, ListaEstaciones.Count - 1)];
                         Direccion = DireccionAleatoria(rm);
                         Ubicacion = PosicionAleatoria(rm);
 
-                        res1 = ControlEstacion.Agregar(IdEstacion.ToString(), Nombre, Direccion, Ubicacion);
-                    }
+                        res = ControlEstacion.Agregar(Nombre, Direccion, Ubicacion);
+                    /*}
                     else
                     {
                         e = Servidor.getInstancia().ColeccionEstacion.Aleatorio();
@@ -138,24 +135,22 @@ namespace ocpp_server_control
                         e.Ubicacion = PosicionAleatoria(rm);
 
                         res1 = ControlEstacion.Agregar(e);
-                    }
+                    }*/
 
-                    if (res1.Estado == true)
+                    if (res.Estado)
                     {
                         Contador++;
 
-                        e = Servidor.getInstancia().ColeccionEstacion.BuscarPorId(IdEstacion);
+                        e = (Estacion)res.Anexo2["Estacion"];
 
-                        res1 = PuntoCarga(ListaMarcas, e, CantidadPuntosCarga, IdPuntoCarga, rm);
-
-                        IdPuntoCarga = (int)res1.Anexo;
+                        res = PuntoCarga(ListaMarcas, e, CantidadPuntosCarga, rm);
                     }
 
                     if (Contador == CantidadEstacion)
                         break;
                 }
 
-                r.Mensaje += "Se realizo la simulacion de " + CantidadEstacion + " Estaciones";
+                r.Mensaje += "Se realizo la simulacion de " + CantidadEstacion + " Estaciones, cada una con " + CantidadPuntosCarga + " Puntos de Carga";
             }
             catch (Exception ex)
             {
@@ -171,13 +166,12 @@ namespace ocpp_server_control
         }
 
 
-        private static Respuesta PuntoCarga(Dictionary<int,string> ListaMarcas,Estacion e, int Cantidad, int pId, Random ram)
+        private static Respuesta PuntoCarga(Dictionary<int,string> ListaMarcas, Estacion e, int Cantidad, Random ram)
         {
             Respuesta r = new Respuesta("ControlSimulacion.PuntoCarga");
 
             try
             {
-                int Id = pId;
                 string NumeroSerie = "";
                 string Marca = "";
                 string Modelo = "";
@@ -193,25 +187,22 @@ namespace ocpp_server_control
                     Marca = ListaMarcas[ram.Next(0, ListaMarcas.Count - 1)];
                     Modelo = ram.Next(1990, 2016).ToString();
 
-                    res = ControlPuntoCarga.Agregar(Id.ToString(), NumeroSerie, Marca, Modelo);
+                    res = ControlPuntoCarga.Agregar(NumeroSerie, Marca, Modelo);
 
                     if (res.Estado == true)
                     {
                         Contador++;
 
-                        pc = Servidor.getInstancia().ColeccionPuntoCarga.BuscarPorId(Id);
+                        pc = (PuntoCarga)res.Anexo2["PuntoCarga"];
 
                         e.ColeccionPuntoCarga.Agregar(pc);
                     }
-
-                    Id++;
 
                     if (Contador == Cantidad)
                         break;
                 }
 
                 r.Mensaje += "Se realizo la simulacion de " + Cantidad + " Estaciones";
-                r.Anexo = Id + 1;
             }
             catch (Exception ex)
             {

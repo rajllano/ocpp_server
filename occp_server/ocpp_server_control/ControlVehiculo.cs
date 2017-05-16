@@ -38,12 +38,12 @@ namespace ocpp_server_control
                 Vehiculo v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorPlaca(pPlaca);
 
                 if(v != null)
-                    throw new Exception("Ya existe un vehiculo con esa placa");
+                    throw new Exception("Ya existe un vehiculo la placa " + pPlaca);
 
                 v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorTag(pTag);
 
                 if(v!=null)
-                    throw new Exception("Ya existe un vehiculo con ese Tag");
+                    throw new Exception("Ya existe un vehiculo con el Tag " + pTag);
 
                 v = new Vehiculo();
 
@@ -54,7 +54,8 @@ namespace ocpp_server_control
                 v.Propietario = pPropietario;
 
                 Servidor.getInstancia().ColeccionVehiculo.Agregar(v);
-                r.Mensaje += "Se agrego el exitosamente el Vehiculo de placa " + pPlaca;
+                r.Anexo2.Add("Vehiculo", v);
+                r.Mensaje += "Se agrego el exitosamente el Vehiculo de placa " + pPlaca + " y Tag " + pTag;
             }
             catch (Exception ex)
             {
@@ -132,10 +133,10 @@ namespace ocpp_server_control
                 Vehiculo v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorPlaca(pPlaca);
 
                 if(v == null)
-                    throw new Exception("No existe un vehiculo con esa placa");
+                    throw new Exception("No existe un vehiculo de placa " + pPlaca);
 
                 r.Anexo = v;
-                r.Mensaje = "Vehiculo encontrado";
+                r.Mensaje = "El vehiculo de placa " + pPlaca + " fue encontrado";
             }
             catch (Exception ex)
             {
@@ -159,10 +160,10 @@ namespace ocpp_server_control
                 Vehiculo v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorTag(pTag);
 
                 if (v == null)
-                    throw new Exception("No existe vehiculo con ese Tag");
+                    throw new Exception("No existe vehiculo con el Tag " + pTag);
 
                 r.Anexo = v;
-                r.Mensaje = "Vehiculo encontrado";
+                r.Mensaje = "Vehiculo con el Tag " + pTag + " fue encontrado";
             }
             catch (Exception ex)
             {

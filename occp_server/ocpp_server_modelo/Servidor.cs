@@ -36,10 +36,17 @@ namespace ocpp_server_modelo
 
         ~Servidor()
         {
+            Inicializar();
+        }
+
+        public void Inicializar()
+        {
             this.ColeccionPuntoCarga = null;
             this.ColeccionEstacion = null;
             this.ColeccionReserva = null;
             this.ColeccionVehiculo = null;
+
+            Instancia = null;
 
             GC.Collect();
         }

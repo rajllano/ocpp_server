@@ -20,9 +20,7 @@ namespace ocpp_server
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Respuesta r1 = ControlEstacion.Agregar("1", "Estacion1", "Direccion1", "Ubicacion1");
-            Respuesta r2 = ControlEstacion.Agregar("2", "Estacion2", "Direccion2", "Ubicacion2");
-            Respuesta r3 = ControlEstacion.Agregar("2", "Estacion3", "Direccion3", "Ubicacion3");
+            
         }
     }
 }

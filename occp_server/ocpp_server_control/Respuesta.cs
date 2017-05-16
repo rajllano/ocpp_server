@@ -14,6 +14,7 @@ namespace ocpp_server_control
 
             this.Estado = true;
             this.Anexo = null;
+            this.Anexo2 = new Dictionary<string, object>();
         }
 
         public Boolean Estado { get; set; }
@@ -21,5 +22,7 @@ namespace ocpp_server_control
         public string Mensaje { get; set; }
 
         public Object Anexo { get; set; }
+
+        public Dictionary<string,Object> Anexo2 { get; set; }
     }
 }

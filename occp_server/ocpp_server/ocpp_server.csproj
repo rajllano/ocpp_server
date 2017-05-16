@@ -172,6 +172,7 @@
     <Content Include="Resources\log.png" />
     <Content Include="Resources\reloj.png" />
     <Content Include="Resources\salir.png" />
+    <Content Include="Resources\simulacion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

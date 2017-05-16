@@ -9,22 +9,13 @@ namespace ocpp_server_control
 {
     public static class ControlPuntoCarga
     {
-        public static Respuesta Agregar(string pId, string pNumeroSerie, string pMarca, string pModelo)
+        public static Respuesta Agregar(string pNumeroSerie, string pMarca, string pModelo)
         {
             Respuesta r = new Respuesta("ControlPuntoCarga.Agregar");
 
             try
             {
-                int Id;
-
-                try
-                {
-                    Id = Convert.ToInt32(pId);
-                }
-                catch
-                {
-                    throw new Exception("El Id debe contener valores numericos");
-                }
+                int Id = ControlId.PuntoCarga();
 
                 PuntoCarga p = Servidor.getInstancia().ColeccionPuntoCarga.BuscarPorId(Id);
 
@@ -48,6 +39,7 @@ namespace ocpp_server_control
                 p.Modelo = pModelo;
 
                 Servidor.getInstancia().ColeccionPuntoCarga.Agregar(p);
+                r.Anexo2.Add("PuntoCarga",p);
                 r.Mensaje += "Se agrego el exitosamente el PuntoCarga con Id " + Id;
             }
             catch (Exception ex)

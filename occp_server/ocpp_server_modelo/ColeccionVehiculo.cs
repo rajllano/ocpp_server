@@ -42,6 +42,7 @@ namespace ocpp_server_modelo
         public Vehiculo Aleatorio()
         {
             Vehiculo v = null;
+
             IteradorColeccionVehiculo i = (IteradorColeccionVehiculo)Iterador();
 
             while (i.tieneSiguiente())

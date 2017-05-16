@@ -7,25 +7,16 @@ namespace ocpp_server_control
     {
         public static Respuesta Agregar(Estacion e)
         {
-            return Agregar(e.Id.ToString(),e.Nombre,e.Direccion,e.Ubicacion);
+            return Agregar(e.Nombre,e.Direccion,e.Ubicacion);
         }
 
-        public static Respuesta Agregar(string pId, string pNombre, string pDireccion, string pUbicacion)
+        public static Respuesta Agregar(string pNombre, string pDireccion, string pUbicacion)
         {
             Respuesta r = new Respuesta("ControlEstacion.Agregar");
 
             try
             {
-                int Id;
-
-                try
-                {
-                    Id = Convert.ToInt32(pId);
-                }
-                catch
-                {
-                    throw new Exception("El Id debe contener valores numericos");
-                }
+                int Id = ControlId.Estacion();
 
                 Estacion e = Servidor.getInstancia().ColeccionEstacion.BuscarPorId(Id);
 
@@ -49,6 +40,8 @@ namespace ocpp_server_control
                 e.Ubicacion = pUbicacion;
 
                 Servidor.getInstancia().ColeccionEstacion.Agregar(e);
+
+                r.Anexo2.Add("Estacion", e);
                 r.Mensaje += "Se agrego el exitosamente la Estacion con Id " + Id;
             }
             catch(Exception ex)
