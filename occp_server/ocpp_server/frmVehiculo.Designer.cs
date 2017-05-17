@@ -42,6 +42,9 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnBuscarPorPlaca = new System.Windows.Forms.Button();
             this.btnBuscarPorTag = new System.Windows.Forms.Button();
+            this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.btnListar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +94,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(171, 142);
+            this.btnCancelar.Location = new System.Drawing.Point(331, 142);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -114,6 +117,7 @@
             this.txtTag.Name = "txtTag";
             this.txtTag.Size = new System.Drawing.Size(235, 20);
             this.txtTag.TabIndex = 7;
+            this.txtTag.TextChanged += new System.EventHandler(this.txtTag_TextChanged);
             // 
             // txtMarca
             // 
@@ -166,11 +170,31 @@
             this.btnBuscarPorTag.UseVisualStyleBackColor = true;
             this.btnBuscarPorTag.Click += new System.EventHandler(this.btnBuscarPorTag_Click);
             // 
+            // dgvLista
+            // 
+            this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLista.Location = new System.Drawing.Point(24, 184);
+            this.dgvLista.Name = "dgvLista";
+            this.dgvLista.Size = new System.Drawing.Size(671, 326);
+            this.dgvLista.TabIndex = 14;
+            // 
+            // btnListar
+            // 
+            this.btnListar.Location = new System.Drawing.Point(171, 142);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(75, 23);
+            this.btnListar.TabIndex = 15;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
             // frmVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 261);
+            this.ClientSize = new System.Drawing.Size(724, 541);
+            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnBuscarPorTag);
             this.Controls.Add(this.btnBuscarPorPlaca);
             this.Controls.Add(this.btnAceptar);
@@ -190,6 +214,7 @@
             this.Text = "Vehiculo - Agregar";
             this.Load += new System.EventHandler(this.frmVehiculoAgregar_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmVehiculo_Paint);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,5 +236,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnBuscarPorPlaca;
         private System.Windows.Forms.Button btnBuscarPorTag;
+        private System.Windows.Forms.DataGridView dgvLista;
+        private System.Windows.Forms.Button btnListar;
     }
 }

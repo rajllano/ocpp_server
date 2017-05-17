@@ -51,7 +51,7 @@ namespace ocpp_server
             {
                 LimpiarCampos();
 
-                Vehiculo v = (Vehiculo)r.Anexo;
+                Vehiculo v = (Vehiculo)r.Anexo["Vehiculo"];
 
                 txtPlaca.Text = v.Placa;
                 txtTag.Text = v.Tag;
@@ -84,7 +84,7 @@ namespace ocpp_server
             {
                 LimpiarCampos();
 
-                Vehiculo v = (Vehiculo)r.Anexo;
+                Vehiculo v = (Vehiculo)r.Anexo["Vehiculo"];
 
                 txtPlaca.Text = v.Placa;
                 txtTag.Text = v.Tag;
@@ -105,15 +105,47 @@ namespace ocpp_server
 
         private void frmVehiculo_Paint(object sender, PaintEventArgs e)
         {
-            txtPlaca.Focus();
+            
         }
 
         private void txtPlaca_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
+            
+        }
+
+        private void txtTag_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            Respuesta r = ControlVehiculo.Listar();
+
+            if (r.Estado)
             {
-                txtTag.Focus();
+                ColeccionVehiculo cv = (ColeccionVehiculo)r.Anexo["Vehiculo"];
+                Vehiculo v;
+
+                this.dgvLista.Columns.Clear();
+
+                this.dgvLista.Columns.Add("Placa","Placa");
+                this.dgvLista.Columns.Add("Tag","Tag");
+                this.dgvLista.Columns.Add("Modelo", "Modelo");
+                this.dgvLista.Columns.Add("Marca", "Marca");
+                this.dgvLista.Columns.Add("Propietario", "Propietario");
+
+                IteradorColeccionVehiculo i = (IteradorColeccionVehiculo)cv.Iterador();
+
+                while (i.tieneSiguiente())
+                {
+                    v = i.Siguiente();
+
+                    this.dgvLista.Rows.Add(v.Placa,v.Tag,v.Modelo, v.Marca,v.Propietario);
+                }
             }
+            else
+                MessageBox.Show(r.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
     }
 }

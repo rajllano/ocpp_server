@@ -1,6 +1,6 @@
 ﻿namespace ocpp_server
 {
-    partial class frmPuntoCarga
+    partial class frmReserva
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmReserva
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmPuntoCarga";
+            this.ClientSize = new System.Drawing.Size(814, 418);
+            this.Name = "frmReserva";
+            this.Text = "frmReserva";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -12,8 +12,6 @@ namespace ocpp_server
 {
     public partial class frmPrincipal : Form
     {
-        private int childFormNumber = 0;
-
         public frmPrincipal()
         {
             InitializeComponent();
@@ -69,12 +67,12 @@ namespace ocpp_server
 
         private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BarraHerramientas.Visible = toolBarToolStripMenuItem.Checked;
+            //BarraHerramientas.Visible = toolBarToolStripMenuItem.Checked;
         }
 
         private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            statusStrip.Visible = statusBarToolStripMenuItem.Checked;
+            //statusStrip.Visible = statusBarToolStripMenuItem.Checked;
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -118,6 +116,20 @@ namespace ocpp_server
         private void helpToolStripButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSimulacion_Click(object sender, EventArgs e)
+        {
+            frmSimulacion Forma = new frmSimulacion();
+
+            Forma.MdiParent = this;
+            Forma.Show();
+            Forma.WindowState = FormWindowState.Maximized;
+        }
+
+        private void btnLogs_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

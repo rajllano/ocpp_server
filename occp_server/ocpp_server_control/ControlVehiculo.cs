@@ -14,6 +14,11 @@ namespace ocpp_server_control
 {
     public static class ControlVehiculo
     {
+        public static Respuesta Agregar(Vehiculo v)
+        {
+            return Agregar(v.Placa, v.Tag, v.Marca, v.Modelo, v.Propietario);
+        }
+
         public static Respuesta Agregar(string pPlaca, string pTag, string pMarca, string pModelo, string pPropietario)
         {
             Respuesta r = new Respuesta("ControlVehiculo.Agregar");
@@ -38,12 +43,12 @@ namespace ocpp_server_control
                 Vehiculo v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorPlaca(pPlaca);
 
                 if(v != null)
-                    throw new Exception("Ya existe un vehiculo con esa placa");
+                    throw new Exception("Ya existe un vehiculo la placa " + pPlaca);
 
                 v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorTag(pTag);
 
                 if(v!=null)
-                    throw new Exception("Ya existe un vehiculo con ese Tag");
+                    throw new Exception("Ya existe un vehiculo con el Tag " + pTag);
 
                 v = new Vehiculo();
 
@@ -54,7 +59,8 @@ namespace ocpp_server_control
                 v.Propietario = pPropietario;
 
                 Servidor.getInstancia().ColeccionVehiculo.Agregar(v);
-                r.Mensaje += "Se agrego el exitosamente el Vehiculo de placa " + pPlaca;
+                r.Anexo.Add("Vehiculo", v);
+                r.Mensaje += "Se agrego el exitosamente el Vehiculo de placa " + pPlaca + " y Tag " + pTag;
             }
             catch (Exception ex)
             {
@@ -132,10 +138,10 @@ namespace ocpp_server_control
                 Vehiculo v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorPlaca(pPlaca);
 
                 if(v == null)
-                    throw new Exception("No existe un vehiculo con esa placa");
+                    throw new Exception("No existe un vehiculo de placa " + pPlaca);
 
-                r.Anexo = v;
-                r.Mensaje = "Vehiculo encontrado";
+                r.Anexo.Add("Vehiculo",v);
+                r.Mensaje = "El vehiculo de placa " + pPlaca + " fue encontrado";
             }
             catch (Exception ex)
             {
@@ -159,10 +165,37 @@ namespace ocpp_server_control
                 Vehiculo v = Servidor.getInstancia().ColeccionVehiculo.BuscarPorTag(pTag);
 
                 if (v == null)
-                    throw new Exception("No existe vehiculo con ese Tag");
+                    throw new Exception("No existe vehiculo con el Tag " + pTag);
 
-                r.Anexo = v;
-                r.Mensaje = "Vehiculo encontrado";
+                r.Anexo.Add("Vehiculo",v);
+                r.Mensaje = "Vehiculo con el Tag " + pTag + " fue encontrado";
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
+
+        public static Respuesta Listar()
+        {
+            Respuesta r = new Respuesta("ControlVehiculo.Listar");
+
+            try
+            {
+                ColeccionVehiculo cv = Servidor.getInstancia().ColeccionVehiculo;
+
+                if(cv.Tamano() == 0)
+                    throw new Exception("No existen vehiculos");
+
+                r.Anexo.Add("ColeccionVehiculo", cv);
+                r.Mensaje = "Cantidad de vehiculos " + cv.Tamano();
             }
             catch (Exception ex)
             {

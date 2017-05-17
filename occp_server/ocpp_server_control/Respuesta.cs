@@ -19,13 +19,15 @@ namespace ocpp_server_control
             this.Mensaje = "[" + Estado + "] ";
 
             this.Estado = true;
-            this.Anexo = null;
+
+            this.Anexo = new Dictionary<string, object>();
+            this.Anexo.Add("Mensaje", null);
         }
 
         public Boolean Estado { get; set; }
 
         public string Mensaje { get; set; }
 
-        public Object Anexo { get; set; }
+        public Dictionary<string,Object> Anexo { get; set; }
     }
 }

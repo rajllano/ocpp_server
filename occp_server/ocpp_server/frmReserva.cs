@@ -1,5 +1,4 @@
-﻿using ocpp_server_control;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ocpp_server
 {
-    public partial class Servidor : Form
+    public partial class frmReserva : Form
     {
-        public Servidor()
+        public frmReserva()
         {
             InitializeComponent();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            
         }
     }
 }
