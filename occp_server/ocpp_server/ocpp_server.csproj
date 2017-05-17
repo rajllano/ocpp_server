@@ -166,6 +166,10 @@
     <None Include="Resources\reserva.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ocpp_server_conexion\ocpp_server_conexion.csproj">
+      <Project>{4928ff72-fb30-476f-9d54-e1b7fc12834f}</Project>
+      <Name>ocpp_server_conexion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ocpp_server_control\ocpp_server_control.csproj">
       <Project>{ad9bf7e7-3055-40b4-868a-84187fa31546}</Project>
       <Name>ocpp_server_control</Name>

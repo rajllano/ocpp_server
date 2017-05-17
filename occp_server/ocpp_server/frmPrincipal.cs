@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ocpp_server_conexion;
 
 namespace ocpp_server
 {
@@ -105,7 +106,7 @@ namespace ocpp_server
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-
+            Conexion servidorWebSocket = new Conexion ();
         }
 
         private void editMenu_Click(object sender, EventArgs e)

@@ -40,9 +40,15 @@
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.btnLogs = new System.Windows.Forms.ToolStripButton();
             this.btnSimulacion = new System.Windows.Forms.ToolStripButton();
-            this.statusStrip.SuspendLayout();
             this.BarraHerramientas.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.Location = new System.Drawing.Point(0, 431);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(632, 22);
+            this.statusStrip.TabIndex = 0;
             // 
             // toolStripStatusLabel
             // 
@@ -149,10 +155,7 @@
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
             this.Text = "OCPP Server";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             this.BarraHerramientas.ResumeLayout(false);
             this.BarraHerramientas.PerformLayout();
             this.ResumeLayout(false);

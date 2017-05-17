@@ -74,9 +74,28 @@ namespace ocpp_server_conexion
             this.PUERTO_PUNTO_CARGA = "90";
             this.IP_SERVIDOR = obtenerIp();
             this.PUERTO_SERVIDOR = "90";
-            objServidor = new Server(this.IP_SERVIDOR, this.PUERTO_SERVIDOR);
-            objServidor.OnDataReceived += new OnReceivedDelegate(servidor_OnDataReceived);
-            objServidor.Start();
+            iniciarServidor(this.IP_SERVIDOR, this.PUERTO_SERVIDOR);
+        }
+
+        private void iniciarServidor(string IPServidor, string puertoServidor)
+        {
+            try
+            {
+                objServidor = new Server(IPServidor, puertoServidor);
+                objServidor.OnDataReceived += new OnReceivedDelegate(servidor_OnDataReceived);
+                objServidor.Start();
+                Console.WriteLine("Servidor iniciado...");
+            }
+            catch (Exception ex)
+            {  
+                Console.WriteLine("Error: " + ex.Message);
+                //.Mensaje += ex.Message;
+            }
+            finally
+            {
+                objServidor.Stop();
+                //ControlLog.Registrar(r);
+            }
         }
 
         public void servidor_OnDataReceived(Object sender, ReceivedArguments R)
