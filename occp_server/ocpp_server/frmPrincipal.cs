@@ -8,14 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ocpp_server_conexion;
+using System.Net;
 
 namespace ocpp_server
 {
     public partial class frmPrincipal : Form
     {
+        public Conexion servidorWebSocket;
+        public string IPSERVIDOR;
+        public string PUERTOSERVIDOR;        
+
         public frmPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            IPSERVIDOR = obtenerIp();
+            PUERTOSERVIDOR = "90";
+            servidorWebSocket = new Conexion(IPSERVIDOR, PUERTOSERVIDOR);
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Environment.Exit(System.Environment.ExitCode);
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -54,28 +71,7 @@ namespace ocpp_server
             this.Close();
         }
 
-        private void CutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void CopyToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void PasteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void ToolBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //BarraHerramientas.Visible = toolBarToolStripMenuItem.Checked;
-        }
-
-        private void StatusBarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //statusStrip.Visible = statusBarToolStripMenuItem.Checked;
-        }
-
+       
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LayoutMdi(MdiLayout.Cascade);
@@ -103,17 +99,7 @@ namespace ocpp_server
                 childForm.Close();
             }
         }
-
-        private void frmPrincipal_Load(object sender, EventArgs e)
-        {
-            Conexion servidorWebSocket = new Conexion ();
-        }
-
-        private void editMenu_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void helpToolStripButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -132,5 +118,37 @@ namespace ocpp_server
         {
 
         }
+
+        private void btnReserva_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            prueba Forma = new prueba();
+
+            Forma.MdiParent = this;
+            Forma.Show();
+            Forma.WindowState = FormWindowState.Normal;
+        }
+
+        public string obtenerIp()
+        {
+            string IPLocal = "0.0.0.0";
+            IPHostEntry host;
+            host = Dns.GetHostEntry(Dns.GetHostName());
+
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    IPLocal = ip.ToString();
+                }
+            }
+
+            return IPLocal;
+        }
+
     }
 }

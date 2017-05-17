@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
@@ -40,6 +41,7 @@
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.btnLogs = new System.Windows.Forms.ToolStripButton();
             this.btnSimulacion = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.BarraHerramientas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +72,8 @@
             this.toolStripSeparator1,
             this.btnSalir,
             this.btnLogs,
-            this.btnSimulacion});
+            this.btnSimulacion,
+            this.toolStripButton1});
             this.BarraHerramientas.Location = new System.Drawing.Point(0, 0);
             this.BarraHerramientas.Name = "BarraHerramientas";
             this.BarraHerramientas.Size = new System.Drawing.Size(632, 25);
@@ -108,6 +111,7 @@
             this.btnReserva.Size = new System.Drawing.Size(23, 22);
             this.btnReserva.Text = "Guardar";
             this.btnReserva.ToolTipText = "Reservas";
+            this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
             // 
             // btnSalir
             // 
@@ -145,6 +149,15 @@
             this.btnSimulacion.ToolTipText = "Logs";
             this.btnSimulacion.Click += new System.EventHandler(this.btnSimulacion_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(64, 22);
+            this.toolStripButton1.Text = "Prueba";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +168,7 @@
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
             this.Text = "OCPP Server";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.BarraHerramientas.ResumeLayout(false);
             this.BarraHerramientas.PerformLayout();
@@ -175,6 +189,7 @@
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.ToolStrip BarraHerramientas;
         private System.Windows.Forms.ToolStripButton btnLogs;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 

@@ -14,136 +14,55 @@ namespace ocpp_server_conexion
     
     public class Conexion
     {
-        private string _IPPuntoCarga;
-        private string _puertoPuntoCarga;
-        private string _IPServidor;
-        private string _puertoServidor;
         Server objServidor;
 
-        public string IP_PUNTO_CARGA
+        public Conexion(string vIPServidor, string vPuertoServidor)
         {
-            set
-            {
-                _IPPuntoCarga = value;
-            }
-            get
-            {
-                return this._IPPuntoCarga;
-            }
+            objServidor = new Server(vIPServidor, vPuertoServidor);
+            objServidor.OnClientConnected += new OnConnectedDelegate(servidor_OnClientConnected);
+            objServidor.OnClientDisconnected += new OnDisconnectedDelegate(servidor_OnClientDisconnected);
+            objServidor.OnServerError += new OnErrorDelegate(servidor_OnServerError);
+            objServidor.OnDataReceived += new OnReceivedDelegate(servidor_OnDataReceived);
+            objServidor.Start();
+            Console.WriteLine("Servidor iniciado...");
         }
 
-        public string PUERTO_PUNTO_CARGA
+        public void servidor_OnClientConnected(Object sender, ConnectedArguments R)
         {
-            set
-            {
-                _puertoPuntoCarga = value;
-            }
-            get
-            {
-                return this._puertoPuntoCarga;
-            }
+            Console.WriteLine("Conected: " + R.Name);
         }
 
-        private string IP_SERVIDOR
+        public void servidor_OnClientDisconnected(Object sender, DisconnectedArguments R)
         {
-            set
-            {
-                _IPServidor = value;
-            }
-            get
-            {
-                return this._IPServidor;
-            }
+            Console.WriteLine("Disconected: " + R.Name);
         }
 
-        private string PUERTO_SERVIDOR
+        public void servidor_OnServerError(Object sender, ErrorArguments R)
         {
-            set
-            {
-                _puertoServidor = value;
-            }
-            get
-            {
-                return this._puertoServidor;
-            }
-        }
-
-        public Conexion()
-        {
-            this.IP_PUNTO_CARGA = obtenerIp();
-            this.PUERTO_PUNTO_CARGA = "90";
-            this.IP_SERVIDOR = obtenerIp();
-            this.PUERTO_SERVIDOR = "90";
-            iniciarServidor(this.IP_SERVIDOR, this.PUERTO_SERVIDOR);
-        }
-
-        private void iniciarServidor(string IPServidor, string puertoServidor)
-        {
-            try
-            {
-                objServidor = new Server(IPServidor, puertoServidor);
-                objServidor.OnDataReceived += new OnReceivedDelegate(servidor_OnDataReceived);
-                objServidor.Start();
-                Console.WriteLine("Servidor iniciado...");
-            }
-            catch (Exception ex)
-            {  
-                Console.WriteLine("Error: " + ex.Message);
-                //.Mensaje += ex.Message;
-            }
-            finally
-            {
-                objServidor.Stop();
-                //ControlLog.Registrar(r);
-            }
+            Console.WriteLine("Error: " + R.ErrorMessage);
         }
 
         public void servidor_OnDataReceived(Object sender, ReceivedArguments R)
         {
-            Console.WriteLine("IP: " + R.Ip + "envia: " + R.ReceivedData);
+            Console.WriteLine("IP: " + R.Ip + " envia: " + R.ReceivedData);
+        }
+
+        public void detenerServidor()
+        {
+            objServidor.Stop();
         }
 
         public bool enviarMensajeCliente(string vNombrePuntoCarga, string vMensaje)
         {
-            bool estadoConexion;
-            
-            try
-            {   
-                estadoConexion = true;
-                objServidor.SendTo(this.IP_PUNTO_CARGA, vMensaje);
-                Console.WriteLine("Estado conexion con servidor: " + estadoConexion);
-            }
-            catch (Exception ex)
-            {
-                estadoConexion = false;
-                Console.WriteLine("Error: " + ex.Message);
-                //.Mensaje += ex.Message;
-            }
-            finally
-            {
-                objServidor.Stop();
-                //ControlLog.Registrar(r);
-            }
+            bool estado = false;
+            Console.WriteLine("Se enviará mensaje desde servidor: " + estado);
+            objServidor.SendTo(vNombrePuntoCarga, vMensaje);
+            estado = true;
+            Console.WriteLine("Estado conexion con servidor: " + estado);            
 
-            return estadoConexion;
+            return estado;
         }
 
-        public string obtenerIp()
-        {
-            string IPLocal = "0.0.0.0";
-            IPHostEntry host;
-            host = Dns.GetHostEntry(Dns.GetHostName());
-
-            foreach (IPAddress ip in host.AddressList)
-            {
-                if (ip.AddressFamily.ToString() == "InterNetwork")
-                {
-                    IPLocal = ip.ToString();
-                }
-            }
-
-            return IPLocal;
-        }
     }
 
 }
