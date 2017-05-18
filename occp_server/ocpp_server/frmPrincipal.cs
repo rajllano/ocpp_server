@@ -14,10 +14,6 @@ namespace ocpp_server
 {
     public partial class frmPrincipal : Form
     {
-        /*public Conexion servidorWebSocket;
-        public string IPSERVIDOR;
-        public string PUERTOSERVIDOR;*/
-
         public frmPrincipal()
         {
             InitializeComponent();
@@ -25,9 +21,7 @@ namespace ocpp_server
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            /*IPSERVIDOR = obtenerIp();
-            PUERTOSERVIDOR = "90";
-            servidorWebSocket = new Conexion(IPSERVIDOR, PUERTOSERVIDOR);*/
+     
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -124,46 +118,20 @@ namespace ocpp_server
             
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            prueba Forma = new prueba();
-
-            Forma.MdiParent = this;
-            Forma.Show();
-            Forma.WindowState = FormWindowState.Normal;
-        }
-
-        public string obtenerIp()
-        {
-            string IPLocal = "0.0.0.0";
-            IPHostEntry host;
-            host = Dns.GetHostEntry(Dns.GetHostName());
-
-            foreach (IPAddress ip in host.AddressList)
-            {
-                if (ip.AddressFamily.ToString() == "InterNetwork")
-                {
-                    IPLocal = ip.ToString();
-                }
-            }
-
-            return IPLocal;
-        }
-
         private void btnIniciarServidor_Click(object sender, EventArgs e)
         {
             Respuesta r = ControlComunicaciones.IniciarDetener();
 
             if(Convert.ToBoolean(r.Anexo["Comunicacion"]))
             {
-                this.Text = "Inicio";
+                btnIniciarServidor.Text = "Detener Servidor";
+                lblEstado.Text = "Servidor Iniciado";
             }
             else
             {
-                this.Text = "Termino";
+                btnIniciarServidor.Text = "Iniciar Servidor";
+                lblEstado.Text = "Servidor Detenido";
             }
-
-            
         }
 
         private void btnDetenerServidor_Click(object sender, EventArgs e)

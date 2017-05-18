@@ -42,7 +42,6 @@
             this.btnSalir = new System.Windows.Forms.ToolStripButton();
             this.btnLogs = new System.Windows.Forms.ToolStripButton();
             this.btnSimulacion = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.btnIniciarServidor = new System.Windows.Forms.ToolStripButton();
             this.BarraEstatus.SuspendLayout();
             this.BarraHerramientas.SuspendLayout();
@@ -85,7 +84,6 @@
             this.btnSalir,
             this.btnLogs,
             this.btnSimulacion,
-            this.toolStripButton1,
             this.btnIniciarServidor});
             this.BarraHerramientas.Location = new System.Drawing.Point(0, 0);
             this.BarraHerramientas.Name = "BarraHerramientas";
@@ -162,15 +160,6 @@
             this.btnSimulacion.ToolTipText = "Logs";
             this.btnSimulacion.Click += new System.EventHandler(this.btnSimulacion_Click);
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(64, 22);
-            this.toolStripButton1.Text = "Prueba";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
             // btnIniciarServidor
             // 
             this.btnIniciarServidor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -214,7 +203,6 @@
         private System.Windows.Forms.ToolStripButton btnSalir;
         private System.Windows.Forms.ToolStrip BarraHerramientas;
         private System.Windows.Forms.ToolStripButton btnLogs;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton btnIniciarServidor;
         private System.Windows.Forms.ToolStripStatusLabel lblEstado;
     }
