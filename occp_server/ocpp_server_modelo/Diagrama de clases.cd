@@ -12,17 +12,13 @@
         <Position X="-1.378" Y="0.412" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="ColeccionVehiculo" Type="ocpp_server_modelo.ColeccionVehiculo" ManuallyRouted="true">
-      <Path>
-        <Point X="4.125" Y="2.891" />
-        <Point X="4.125" Y="3.5" />
-      </Path>
+    <AssociationLine Name="ColeccionVehiculo" Type="ocpp_server_modelo.ColeccionVehiculo">
       <MemberNameLabel ManuallyPlaced="true">
         <Position X="-2.023" Y="-0.328" />
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQAAAAAAAAAAAAAAAAAAIAAAAAAAAAUAIAAAAAAEAA=</HashCode>
+      <HashCode>AgQAAAAAAAAAAAAAAAAAAIAAAAAAAAAUAIAAAAAAEAA=</HashCode>
       <FileName>Servidor.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -91,7 +87,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAACAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>ColeccionVehiculo.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />

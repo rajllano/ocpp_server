@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ocpp_server_control.ControlEstacion">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAQAAAAAAAAAABAAAAAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>ControlEstacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ocpp_server_control.ControlId">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAIAAQAAAAAAAAAAAQAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>ControlId.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ocpp_server_control.ControlLog">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>ControlLog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ocpp_server_control.ControlPuntoCarga">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ControlPuntoCarga.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ocpp_server_control.ControlReserva">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>ControlReserva.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ocpp_server_control.ControlSimulacion">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAABAAAABAAQAQQAAAAAAQAACAAIAAAAAE=</HashCode>
+      <FileName>ControlSimulacion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ocpp_server_control.ControlVehiculo">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQCEAAAAAAQAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>ControlVehiculo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ocpp_server_control.Respuesta">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAg=</HashCode>
+      <FileName>Respuesta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

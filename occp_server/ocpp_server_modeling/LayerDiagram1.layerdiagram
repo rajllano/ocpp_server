@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="3f27fd8c-cb32-4b1c-8312-8e1ccd124424" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
   <layers>
-    <layer Id="834ca8b8-bc59-4772-8e52-d21ca8f2326a" name="GUI - Servidor">
+    <layer Id="834ca8b8-bc59-4772-8e52-d21ca8f2326a" name="GUI - Servidor (Simulación)">
       <childLayers>
         <layer Id="b3322b6a-8775-49f7-a0fa-72ce00e016a7" name="Monitoreo de Puntos de Carga">
           <childLayers>
@@ -12,6 +12,7 @@
           <childLayers>
             <layer Id="a326c573-a6d7-46d2-ad31-2e788f9708f9" name="Reservas" />
             <layer Id="8846e310-5c3a-4d0b-a36e-bf644cf7df5f" name="Vehiculos" />
+            <layer Id="af10221e-8701-4f01-a1a7-8b9700bb8e70" name="Estación" />
           </childLayers>
         </layer>
         <layer Id="63a4f4a9-6f57-48a0-9a27-c765b43579cd" name="Control de Puntos de Carga" />
@@ -58,12 +59,26 @@
             <layer Id="06fdd436-116a-41eb-b2d5-db23fcba42ff" name="...." />
           </childLayers>
         </layer>
+        <layer Id="8c9b4226-d689-4fd0-9b2f-f3101acd0e77" name="Controlador de Logs">
+          <childLayers>
+            <layer Id="b0e9b71d-3cd8-4489-9083-ed5f6226a83b" name="Crear" />
+            <layer Id="a2bffdfa-cc85-4ee8-92f3-9dd398239fe3" name="Eliminar" />
+            <layer Id="e1cf4857-4882-45bd-963b-6b8fc9babbd4" name="...." />
+          </childLayers>
+        </layer>
+        <layer Id="bc99d605-7dc7-4564-8995-f9bcbccb9710" name="Controlador de Ids">
+          <childLayers>
+            <layer Id="c3514a44-b43e-41f5-a356-ab2f3c6061ab" name="Estacion" />
+            <layer Id="eb2ef94b-1137-4907-af02-64dca46db777" name="Punto Carga" />
+            <layer Id="0626375e-01a5-4ef2-8f6b-200bce9c64e5" name="Reserva" />
+          </childLayers>
+        </layer>
       </childLayers>
     </layer>
     <layer Id="a9584c51-f3e5-47cf-a4e8-e7c7b9ad541f" name="Conexión - WebSocket">
       <childLayers>
-        <layer Id="1756a338-b45f-447d-b3ac-70488bed41e2" name="Serialización Json" />
-        <layer Id="fda9251e-c340-4697-87f1-815b0a0f99bf" name="Des serialización Json" />
+        <layer Id="1756a338-b45f-447d-b3ac-70488bed41e2" name="Serialización y Des serialización Json" />
+        <layer Id="fda9251e-c340-4697-87f1-815b0a0f99bf" name="Conexión" />
       </childLayers>
     </layer>
     <layer Id="cc7619dc-26fb-4da1-80b5-8b683520e5de" name="Modelo">
