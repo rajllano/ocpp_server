@@ -39,11 +39,13 @@
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.txtPropietario = new System.Windows.Forms.TextBox();
-            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnBuscarPorPlaca = new System.Windows.Forms.Button();
             this.btnBuscarPorTag = new System.Windows.Forms.Button();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.btnListar = new System.Windows.Forms.Button();
+            this.btnEliminarPlaca = new System.Windows.Forms.Button();
+            this.btnEliminarTag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,15 +142,15 @@
             this.txtPropietario.Size = new System.Drawing.Size(235, 20);
             this.txtPropietario.TabIndex = 10;
             // 
-            // btnAceptar
+            // btnAgregar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(90, 142);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 11;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            this.btnAgregar.Location = new System.Drawing.Point(90, 142);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 11;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnBuscarPorPlaca
             // 
@@ -180,7 +182,7 @@
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(171, 142);
+            this.btnListar.Location = new System.Drawing.Point(250, 142);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(75, 23);
             this.btnListar.TabIndex = 15;
@@ -188,16 +190,38 @@
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
+            // btnEliminarPlaca
+            // 
+            this.btnEliminarPlaca.Location = new System.Drawing.Point(412, 8);
+            this.btnEliminarPlaca.Name = "btnEliminarPlaca";
+            this.btnEliminarPlaca.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarPlaca.TabIndex = 16;
+            this.btnEliminarPlaca.Text = "Eliminar";
+            this.btnEliminarPlaca.UseVisualStyleBackColor = true;
+            this.btnEliminarPlaca.Click += new System.EventHandler(this.btnEliminarPlaca_Click);
+            // 
+            // btnEliminarTag
+            // 
+            this.btnEliminarTag.Location = new System.Drawing.Point(412, 35);
+            this.btnEliminarTag.Name = "btnEliminarTag";
+            this.btnEliminarTag.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminarTag.TabIndex = 17;
+            this.btnEliminarTag.Text = "Eliminar";
+            this.btnEliminarTag.UseVisualStyleBackColor = true;
+            this.btnEliminarTag.Click += new System.EventHandler(this.btnEliminarTag_Click);
+            // 
             // frmVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(724, 541);
+            this.Controls.Add(this.btnEliminarTag);
+            this.Controls.Add(this.btnEliminarPlaca);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnBuscarPorTag);
             this.Controls.Add(this.btnBuscarPorPlaca);
-            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.txtPropietario);
             this.Controls.Add(this.txtModelo);
             this.Controls.Add(this.txtMarca);
@@ -233,10 +257,12 @@
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.TextBox txtPropietario;
-        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnBuscarPorPlaca;
         private System.Windows.Forms.Button btnBuscarPorTag;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Button btnListar;
+        private System.Windows.Forms.Button btnEliminarPlaca;
+        private System.Windows.Forms.Button btnEliminarTag;
     }
 }

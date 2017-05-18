@@ -124,7 +124,7 @@ namespace ocpp_server
 
             if (r.Estado)
             {
-                ColeccionVehiculo cv = (ColeccionVehiculo)r.Anexo["Vehiculo"];
+                ColeccionVehiculo cv = (ColeccionVehiculo)r.Anexo["ColeccionVehiculo"];
                 Vehiculo v;
 
                 this.dgvLista.Columns.Clear();
@@ -143,6 +143,34 @@ namespace ocpp_server
 
                     this.dgvLista.Rows.Add(v.Placa,v.Tag,v.Modelo, v.Marca,v.Propietario);
                 }
+            }
+            else
+                MessageBox.Show(r.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+        }
+
+        private void btnEliminarPlaca_Click(object sender, EventArgs e)
+        {
+            Respuesta r = ControlVehiculo.EliminarPorPlaca(txtPlaca.Text);
+
+            if (r.Estado)
+            {
+                MessageBox.Show(r.Mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                LimpiarCampos();
+            }
+            else
+                MessageBox.Show(r.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+        }
+
+        private void btnEliminarTag_Click(object sender, EventArgs e)
+        {
+            Respuesta r = ControlVehiculo.EliminarPorTag(txtTag.Text);
+
+            if (r.Estado)
+            {
+                MessageBox.Show(r.Mensaje, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+
+                LimpiarCampos();
             }
             else
                 MessageBox.Show(r.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
