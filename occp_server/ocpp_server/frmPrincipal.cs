@@ -7,16 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ocpp_server_conexion;
 using System.Net;
+using ocpp_server_control;
 
 namespace ocpp_server
 {
     public partial class frmPrincipal : Form
     {
-        public Conexion servidorWebSocket;
+        /*public Conexion servidorWebSocket;
         public string IPSERVIDOR;
-        public string PUERTOSERVIDOR;        
+        public string PUERTOSERVIDOR;*/
 
         public frmPrincipal()
         {
@@ -25,9 +25,9 @@ namespace ocpp_server
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            IPSERVIDOR = obtenerIp();
+            /*IPSERVIDOR = obtenerIp();
             PUERTOSERVIDOR = "90";
-            servidorWebSocket = new Conexion(IPSERVIDOR, PUERTOSERVIDOR);
+            servidorWebSocket = new Conexion(IPSERVIDOR, PUERTOSERVIDOR);*/
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -150,5 +150,30 @@ namespace ocpp_server
             return IPLocal;
         }
 
+        private void btnIniciarServidor_Click(object sender, EventArgs e)
+        {
+            Respuesta r = ControlComunicaciones.IniciarDetener();
+
+            if(Convert.ToBoolean(r.Anexo["Comunicacion"]))
+            {
+                this.Text = "Inicio";
+            }
+            else
+            {
+                this.Text = "Termino";
+            }
+
+            
+        }
+
+        private void btnDetenerServidor_Click(object sender, EventArgs e)
+        {
+            Boolean Estado = ControlComunicaciones.Detener();
+
+            if (Estado)
+                this.lblEstado.Text = "Servidor Detenido";
+            else
+                this.lblEstado.Text = "Error deteniendo el servidor";
+        }
     }
 }

@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ocpp_server_conexion;
 
 namespace ocpp_server
 {
     public partial class prueba : Form
     {
-        Conexion servidorWebSocket;
-        private string IPPUNTOCARGA;
+        //Conexion servidorWebSocket;
+        //private string IPPUNTOCARGA;
 
         public prueba()
         {
@@ -24,14 +23,13 @@ namespace ocpp_server
         private void prueba_Load(object sender, EventArgs e)
         {
             frmPrincipal  formaPadre = (frmPrincipal)this.MdiParent;
-            servidorWebSocket = formaPadre.servidorWebSocket;
-            IPPUNTOCARGA = formaPadre.IPSERVIDOR;/*se debe poner la ip del punto de carga, si corre en la misma maquina es la misma*/
+            //servidorWebSocket = formaPadre.servidorWebSocket;
+            //IPPUNTOCARGA = formaPadre.IPSERVIDOR;/*se debe poner la ip del punto de carga, si corre en la misma maquina es la misma*/
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            servidorWebSocket.enviarMensajeCliente(IPPUNTOCARGA, "Envio de Mensaje de prueba servidor...");            
+            //servidorWebSocket.enviarMensajeCliente(IPPUNTOCARGA, "Envio de Mensaje de prueba servidor...");            
         }
-
     }
 }

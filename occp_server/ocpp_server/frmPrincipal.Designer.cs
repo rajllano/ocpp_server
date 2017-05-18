@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.BarraEstatus = new System.Windows.Forms.StatusStrip();
+            this.lblEstado = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -42,15 +43,26 @@
             this.btnLogs = new System.Windows.Forms.ToolStripButton();
             this.btnSimulacion = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btnIniciarServidor = new System.Windows.Forms.ToolStripButton();
+            this.BarraEstatus.SuspendLayout();
             this.BarraHerramientas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // statusStrip
+            // BarraEstatus
             // 
-            this.statusStrip.Location = new System.Drawing.Point(0, 431);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(632, 22);
-            this.statusStrip.TabIndex = 0;
+            this.BarraEstatus.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lblEstado});
+            this.BarraEstatus.Location = new System.Drawing.Point(0, 431);
+            this.BarraEstatus.Name = "BarraEstatus";
+            this.BarraEstatus.Size = new System.Drawing.Size(632, 22);
+            this.BarraEstatus.TabIndex = 0;
+            this.BarraEstatus.Text = "hola mundo";
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(42, 17);
+            this.lblEstado.Text = "Estado";
             // 
             // toolStripStatusLabel
             // 
@@ -73,7 +85,8 @@
             this.btnSalir,
             this.btnLogs,
             this.btnSimulacion,
-            this.toolStripButton1});
+            this.toolStripButton1,
+            this.btnIniciarServidor});
             this.BarraHerramientas.Location = new System.Drawing.Point(0, 0);
             this.BarraHerramientas.Name = "BarraHerramientas";
             this.BarraHerramientas.Size = new System.Drawing.Size(632, 25);
@@ -158,18 +171,30 @@
             this.toolStripButton1.Text = "Prueba";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // btnIniciarServidor
+            // 
+            this.btnIniciarServidor.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.btnIniciarServidor.Image = ((System.Drawing.Image)(resources.GetObject("btnIniciarServidor.Image")));
+            this.btnIniciarServidor.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnIniciarServidor.Name = "btnIniciarServidor";
+            this.btnIniciarServidor.Size = new System.Drawing.Size(89, 22);
+            this.btnIniciarServidor.Text = "Iniciar Servidor";
+            this.btnIniciarServidor.Click += new System.EventHandler(this.btnIniciarServidor_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 453);
-            this.Controls.Add(this.statusStrip);
+            this.Controls.Add(this.BarraEstatus);
             this.Controls.Add(this.BarraHerramientas);
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
             this.Text = "OCPP Server";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.BarraEstatus.ResumeLayout(false);
+            this.BarraEstatus.PerformLayout();
             this.BarraHerramientas.ResumeLayout(false);
             this.BarraHerramientas.PerformLayout();
             this.ResumeLayout(false);
@@ -178,7 +203,7 @@
         }
         #endregion
 
-        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.StatusStrip BarraEstatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripButton btnVehiculos;
@@ -190,6 +215,8 @@
         private System.Windows.Forms.ToolStrip BarraHerramientas;
         private System.Windows.Forms.ToolStripButton btnLogs;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btnIniciarServidor;
+        private System.Windows.Forms.ToolStripStatusLabel lblEstado;
     }
 }
 

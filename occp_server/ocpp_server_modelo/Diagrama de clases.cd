@@ -180,14 +180,14 @@
     </TypeIdentifier>
   </Interface>
   <Enum Name="ocpp_server_modelo.EEstadoPuntoCarga">
-    <Position X="5.75" Y="11.5" Width="2.25" />
+    <Position X="5.75" Y="11.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAgAIAAAAAAAAAAAAg=</HashCode>
       <FileName>EEstadoPuntoCarga.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="ocpp_server_modelo.EEstadoConectorPuntoCarga">
-    <Position X="5.75" Y="13.25" Width="2.25" />
+    <Position X="5.75" Y="13.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>EEstadoConectorPuntoCarga.cs</FileName>

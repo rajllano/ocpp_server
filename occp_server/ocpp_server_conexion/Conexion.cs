@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NetworksApi.TCP.SERVER;
 using System.Net;
 
@@ -14,17 +7,45 @@ namespace ocpp_server_conexion
     
     public class Conexion
     {
-        Server objServidor;
+        //private Server objServidor;
 
-        public Conexion(string vIPServidor, string vPuertoServidor)
+        public Conexion(string uno, string dos)
         {
-            objServidor = new Server(vIPServidor, vPuertoServidor);
+            /*objServidor = new Server(obtenerIp(), "90");
+
             objServidor.OnClientConnected += new OnConnectedDelegate(servidor_OnClientConnected);
             objServidor.OnClientDisconnected += new OnDisconnectedDelegate(servidor_OnClientDisconnected);
             objServidor.OnServerError += new OnErrorDelegate(servidor_OnServerError);
             objServidor.OnDataReceived += new OnReceivedDelegate(servidor_OnDataReceived);
+
+            Console.WriteLine("Iniciando servidor...");
             objServidor.Start();
-            Console.WriteLine("Servidor iniciado...");
+            Console.WriteLine("Servidor iniciado");*/
+        }
+
+        ~Conexion()
+        {
+            /*objServidor.Stop();
+            objServidor = null;
+
+            GC.Collect();*/
+        }
+
+        private string obtenerIp()
+        {
+            string IPLocal = "0.0.0.0";
+            IPHostEntry host;
+            host = Dns.GetHostEntry(Dns.GetHostName());
+
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    IPLocal = ip.ToString();
+                }
+            }
+
+            return IPLocal;
         }
 
         public void servidor_OnClientConnected(Object sender, ConnectedArguments R)
@@ -44,25 +65,23 @@ namespace ocpp_server_conexion
 
         public void servidor_OnDataReceived(Object sender, ReceivedArguments R)
         {
-            Console.WriteLine("IP: " + R.Ip + " envia: " + R.ReceivedData);
+            Console.WriteLine("IP: " + R.Ip + " recibido: " + R.ReceivedData);
         }
 
         public void detenerServidor()
         {
-            objServidor.Stop();
+            //objServidor.Stop();
         }
 
-        public bool enviarMensajeCliente(string vNombrePuntoCarga, string vMensaje)
+        public bool enviarMensajeCliente(string Ip, string Mensaje)
         {
             bool estado = false;
-            Console.WriteLine("Se enviará mensaje desde servidor: " + estado);
-            objServidor.SendTo(vNombrePuntoCarga, vMensaje);
+            /*Console.WriteLine("Se enviará mensaje desde servidor: " + estado);
+            objServidor.SendTo(Ip, Mensaje);
             estado = true;
-            Console.WriteLine("Estado conexion con servidor: " + estado);            
+            Console.WriteLine("Estado conexion con servidor: " + estado); */
 
             return estado;
         }
-
     }
-
 }
