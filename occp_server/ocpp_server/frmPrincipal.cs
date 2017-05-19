@@ -39,7 +39,7 @@ namespace ocpp_server
 
             Forma.MdiParent = this;
             Forma.Show();
-            Forma.WindowState = FormWindowState.Normal;
+            Forma.WindowState = FormWindowState.Maximized;
         }
 
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace ocpp_server
 
             Forma.MdiParent = this;
             Forma.Show();
-            Forma.WindowState = FormWindowState.Normal;
+            Forma.WindowState = FormWindowState.Maximized;
         }
 
         private void btnLogs_Click(object sender, EventArgs e)
@@ -101,7 +101,7 @@ namespace ocpp_server
 
             Forma.MdiParent = this;
             Forma.Show();
-            Forma.WindowState = FormWindowState.Normal;
+            Forma.WindowState = FormWindowState.Maximized;
         }
 
         private void btnIniciarServidor_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace ocpp_server
 
             Forma.MdiParent = this;
             Forma.Show();
-            Forma.WindowState = FormWindowState.Normal;
+            Forma.WindowState = FormWindowState.Maximized;
         }
     }
 }
