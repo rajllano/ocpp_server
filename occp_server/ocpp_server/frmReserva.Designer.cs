@@ -115,7 +115,6 @@
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Location = new System.Drawing.Point(12, 184);
             this.dgvLista.Name = "dgvLista";
-            this.dgvLista.ReadOnly = true;
             this.dgvLista.Size = new System.Drawing.Size(405, 115);
             this.dgvLista.TabIndex = 26;
             // 

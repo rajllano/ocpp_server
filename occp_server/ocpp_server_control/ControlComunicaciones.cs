@@ -62,8 +62,20 @@ namespace ocpp_server_control
             Respuesta r = new Respuesta("ControlComunicaciones.ServidorRecibido");
 
             r.Mensaje += "Ip [" + R.Ip + "] - Id [" + R.Name + "] - Dato [" + R.ReceivedData + "]";
-
+            
             ControlLog.Registrar(r);
+
+            if (R.ReceivedData.Contains("SOL_RESERVA"))
+            {
+                String Ip = obtenerIp();
+                Respuesta r0 = ControlComunicaciones.Enviar(Ip, "LE ENVIE OBJETO");
+
+
+                JSon.SerializarReser();
+
+                ControlLog.Registrar(r0);
+            }
+
         }
 
         public static Respuesta IniciarDetener()

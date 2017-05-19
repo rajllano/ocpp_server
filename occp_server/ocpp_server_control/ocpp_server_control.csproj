@@ -55,6 +55,7 @@
     <Compile Include="ControlReserva.cs" />
     <Compile Include="ControlSimulacion.cs" />
     <Compile Include="ControlVehiculo.cs" />
+    <Compile Include="JSon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respuesta.cs" />
   </ItemGroup>
