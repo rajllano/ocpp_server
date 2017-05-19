@@ -77,6 +77,12 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPuntoCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPuntoCarga.Designer.cs">
+      <DependentUpon>frmPuntoCarga.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReserva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,17 +108,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Servidor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Servidor.Designer.cs">
-      <DependentUpon>Servidor.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmEstacion.resx">
       <DependentUpon>frmEstacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPuntoCarga.resx">
+      <DependentUpon>frmPuntoCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReserva.resx">
       <DependentUpon>frmReserva.cs</DependentUpon>
@@ -127,9 +130,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Servidor.resx">
-      <DependentUpon>Servidor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

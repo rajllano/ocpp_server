@@ -98,26 +98,6 @@ namespace ocpp_server
                 MessageBox.Show(r.Mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
         }
 
-        private void txtPlaca_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
-        private void frmVehiculo_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
-
-        private void txtPlaca_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-
-        private void txtTag_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnListar_Click(object sender, EventArgs e)
         {
             Respuesta r = ControlVehiculo.Listar();

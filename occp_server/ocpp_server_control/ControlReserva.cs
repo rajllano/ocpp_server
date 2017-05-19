@@ -161,5 +161,98 @@ namespace ocpp_server_control
 
             return r;
         }
+
+        public static Respuesta Eliminar(string pId)
+        {
+            Respuesta r = new Respuesta("ControlReserva.Eliminar");
+
+            try
+            {
+                int Id;
+
+                try
+                {
+                    Id = Convert.ToInt32(pId);
+                }
+                catch
+                {
+                    throw new Exception("El Id debe contener valores numericos");
+                }
+
+                Reserva  p = Servidor.getInstancia().ColeccionReserva.BuscarPorId(Id);
+
+                if (p == null)
+                    throw new Exception("No existe una reserva con el Id " + Id);
+
+                Servidor.getInstancia().ColeccionReserva.Eliminar(p);
+                r.Mensaje += "Se elimino exitosamente la reserva con Id " + Id;
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
+
+        public static Respuesta BuscarPorId(string pId)
+        {
+            Respuesta r = new Respuesta("ControlReserva.BuscarPorId");
+            
+            try
+            {
+                Reserva  v = Servidor.getInstancia().ColeccionReserva.BuscarPorId(Convert.ToInt32(pId));
+
+                if (v == null)
+                    throw new Exception("No existe una reserva con el Id " + pId);
+
+                r.Anexo.Add("Punto de Carga", v);
+                r.Mensaje = "Punto de Carga con el Id " + pId + " fue encontrado";
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
+
+        public static Respuesta Listar()
+        {
+            Respuesta r = new Respuesta("ControlReserva.Listar");
+
+            try
+            {
+                ColeccionReserva cv = Servidor.getInstancia().ColeccionReserva;
+
+                if (cv.Tamano() == 0)
+                    throw new Exception("No existen reservas");
+
+                r.Anexo.Add("ColeccionReserva", cv);
+                r.Mensaje = "Cantidad de reservas " + cv.Tamano();
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
+
     }
 }

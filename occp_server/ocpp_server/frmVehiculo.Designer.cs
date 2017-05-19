@@ -96,7 +96,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(331, 142);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(409, 291);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 5;
@@ -110,8 +111,6 @@
             this.txtPlaca.Name = "txtPlaca";
             this.txtPlaca.Size = new System.Drawing.Size(235, 20);
             this.txtPlaca.TabIndex = 6;
-            this.txtPlaca.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPlaca_KeyDown);
-            this.txtPlaca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlaca_KeyPress);
             // 
             // txtTag
             // 
@@ -119,7 +118,6 @@
             this.txtTag.Name = "txtTag";
             this.txtTag.Size = new System.Drawing.Size(235, 20);
             this.txtTag.TabIndex = 7;
-            this.txtTag.TextChanged += new System.EventHandler(this.txtTag_TextChanged);
             // 
             // txtMarca
             // 
@@ -174,15 +172,18 @@
             // 
             // dgvLista
             // 
+            this.dgvLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(24, 184);
+            this.dgvLista.Location = new System.Drawing.Point(12, 181);
             this.dgvLista.Name = "dgvLista";
-            this.dgvLista.Size = new System.Drawing.Size(671, 326);
+            this.dgvLista.Size = new System.Drawing.Size(475, 104);
             this.dgvLista.TabIndex = 14;
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(250, 142);
+            this.btnListar.Location = new System.Drawing.Point(171, 142);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(75, 23);
             this.btnListar.TabIndex = 15;
@@ -214,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 541);
+            this.ClientSize = new System.Drawing.Size(496, 326);
             this.Controls.Add(this.btnEliminarTag);
             this.Controls.Add(this.btnEliminarPlaca);
             this.Controls.Add(this.btnListar);
@@ -233,11 +234,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.MinimumSize = new System.Drawing.Size(512, 365);
             this.Name = "frmVehiculo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vehiculo - Agregar";
             this.Load += new System.EventHandler(this.frmVehiculoAgregar_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmVehiculo_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

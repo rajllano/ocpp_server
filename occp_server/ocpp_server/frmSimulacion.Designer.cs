@@ -47,7 +47,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 53);
+            this.label1.Location = new System.Drawing.Point(21, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 13);
             this.label1.TabIndex = 0;
@@ -65,7 +65,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 90);
+            this.label3.Location = new System.Drawing.Point(21, 74);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             // btnProcesar
             // 
-            this.btnProcesar.Location = new System.Drawing.Point(230, 161);
+            this.btnProcesar.Location = new System.Drawing.Point(128, 123);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(75, 23);
             this.btnProcesar.TabIndex = 4;
@@ -85,30 +85,30 @@
             // 
             this.txtCantidadEstaciones.Location = new System.Drawing.Point(128, 19);
             this.txtCantidadEstaciones.Name = "txtCantidadEstaciones";
-            this.txtCantidadEstaciones.Size = new System.Drawing.Size(177, 20);
+            this.txtCantidadEstaciones.Size = new System.Drawing.Size(75, 20);
             this.txtCantidadEstaciones.TabIndex = 5;
             this.txtCantidadEstaciones.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadEstaciones_KeyPress);
             // 
             // txtCantidadPuntosCarga
             // 
-            this.txtCantidadPuntosCarga.Location = new System.Drawing.Point(128, 53);
+            this.txtCantidadPuntosCarga.Location = new System.Drawing.Point(128, 45);
             this.txtCantidadPuntosCarga.Name = "txtCantidadPuntosCarga";
-            this.txtCantidadPuntosCarga.Size = new System.Drawing.Size(177, 20);
+            this.txtCantidadPuntosCarga.Size = new System.Drawing.Size(75, 20);
             this.txtCantidadPuntosCarga.TabIndex = 6;
             this.txtCantidadPuntosCarga.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadPuntosCarga_KeyPress);
             // 
             // txtCantidadVehiculos
             // 
-            this.txtCantidadVehiculos.Location = new System.Drawing.Point(128, 87);
+            this.txtCantidadVehiculos.Location = new System.Drawing.Point(128, 71);
             this.txtCantidadVehiculos.Name = "txtCantidadVehiculos";
-            this.txtCantidadVehiculos.Size = new System.Drawing.Size(177, 20);
+            this.txtCantidadVehiculos.Size = new System.Drawing.Size(75, 20);
             this.txtCantidadVehiculos.TabIndex = 7;
             this.txtCantidadVehiculos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadVehiculos_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 129);
+            this.label4.Location = new System.Drawing.Point(22, 100);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 13);
             this.label4.TabIndex = 8;
@@ -116,23 +116,26 @@
             // 
             // txtCantidadReservas
             // 
-            this.txtCantidadReservas.Location = new System.Drawing.Point(128, 126);
+            this.txtCantidadReservas.Location = new System.Drawing.Point(128, 97);
             this.txtCantidadReservas.Name = "txtCantidadReservas";
-            this.txtCantidadReservas.Size = new System.Drawing.Size(177, 20);
+            this.txtCantidadReservas.Size = new System.Drawing.Size(75, 20);
             this.txtCantidadReservas.TabIndex = 9;
             this.txtCantidadReservas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidadReservas_KeyPress);
             // 
             // txtProgreso
             // 
-            this.txtProgreso.Location = new System.Drawing.Point(25, 212);
+            this.txtProgreso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtProgreso.Location = new System.Drawing.Point(12, 152);
             this.txtProgreso.Multiline = true;
             this.txtProgreso.Name = "txtProgreso";
-            this.txtProgreso.Size = new System.Drawing.Size(593, 200);
+            this.txtProgreso.Size = new System.Drawing.Size(409, 116);
             this.txtProgreso.TabIndex = 10;
             // 
             // btnInicializar
             // 
-            this.btnInicializar.Location = new System.Drawing.Point(128, 161);
+            this.btnInicializar.Location = new System.Drawing.Point(12, 123);
             this.btnInicializar.Name = "btnInicializar";
             this.btnInicializar.Size = new System.Drawing.Size(75, 23);
             this.btnInicializar.TabIndex = 11;
@@ -142,7 +145,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(333, 161);
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Location = new System.Drawing.Point(346, 274);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 12;
@@ -154,7 +158,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(763, 489);
+            this.ClientSize = new System.Drawing.Size(433, 309);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnInicializar);
             this.Controls.Add(this.txtProgreso);

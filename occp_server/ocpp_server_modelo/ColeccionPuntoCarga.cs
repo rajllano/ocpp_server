@@ -28,6 +28,22 @@ namespace ocpp_server_modelo
             return null;
         }
 
+        public PuntoCarga BuscarPorNumeroSerie(string numeroSerie)
+        {
+            PuntoCarga p = null;
+            IteradorColeccionPuntoCarga i = (IteradorColeccionPuntoCarga)Iterador();
+
+            while (i.tieneSiguiente())
+            {
+                p = i.Siguiente();
+
+                if (p.NumeroSerie == numeroSerie)
+                    return p;
+            }
+
+            return null;
+        }
+
         public object Iterador()
         {
             return new IteradorColeccionPuntoCarga(this);

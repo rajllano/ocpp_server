@@ -100,51 +100,21 @@ namespace ocpp_server_control
             return r;
         }
 
-        public static Respuesta AgregarPuntoCarga(string pEstacionId, string pPuntoCargaId)
+        public static Respuesta BuscarPorId(int pId)
         {
-            Respuesta r = new Respuesta("ControlEstacion.AgregarPuntoCarga");
+            Respuesta r = new Respuesta("ControlEstacion.BuscarPorId");
 
             try
             {
-                int EstacionId;
-                
-                try
-                {
-                    EstacionId = Convert.ToInt32(pEstacionId);
-                }
-                catch
-                {
-                    throw new Exception("El EstacionId debe contener valores numericos");
-                }
+                Estacion v = Servidor.getInstancia().ColeccionEstacion.BuscarPorId(pId);
 
-                int PuntoCargaId;
+                if (v == null)
+                    throw new Exception("No existe una estacion de id " + pId.ToString());
 
-                try
-                {
-                    PuntoCargaId = Convert.ToInt32(pPuntoCargaId);
-                }
-                catch
-                {
-                    throw new Exception("El PuntoCargaId debe contener valores numericos");
-                }
-
-                Estacion e = Servidor.getInstancia().ColeccionEstacion.BuscarPorId(EstacionId);
-
-                if(e==null)
-                    throw new Exception("No existe una Estacion con el Id " + EstacionId);
-
-                PuntoCarga p = Servidor.getInstancia().ColeccionPuntoCarga.BuscarPorId(PuntoCargaId);
-
-                if(p==null)
-                    throw new Exception("No existe el PuntoCarga con el Id " + PuntoCargaId);
-
-                if(e.ColeccionPuntoCarga.BuscarPorId(PuntoCargaId) != null)
-                    throw new Exception("Ya se encuentra asociado el Punto de Carga a la Estacion");
-
-                e.ColeccionPuntoCarga.Agregar(p);
-                r.Mensaje += "Se asocio correctamente a la Estacion " + EstacionId + " el PuntoCarga " + PuntoCargaId;
+                r.Anexo.Add("Estacion", v);
+                r.Mensaje = "La estacion de id " + pId.ToString() + " fue encontrada";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 r.Estado = false;
                 r.Mensaje += ex.Message;
@@ -157,49 +127,19 @@ namespace ocpp_server_control
             return r;
         }
 
-        public static Respuesta EliminarPuntoCarga(string pEstacionId, string pPuntoCargaId)
+        public static Respuesta Listar()
         {
-            Respuesta r = new Respuesta("ControlEstacion.EliminarPuntoCarga");
+            Respuesta r = new Respuesta("ControlEstacion.Listar");
 
             try
             {
-                int EstacionId;
+                ColeccionEstacion  cv = Servidor.getInstancia().ColeccionEstacion;
 
-                try
-                {
-                    EstacionId = Convert.ToInt32(pEstacionId);
-                }
-                catch
-                {
-                    throw new Exception("El EstacionId debe contener valores numericos");
-                }
+                if (cv.Tamano() == 0)
+                    throw new Exception("No existen estaciones");
 
-                int PuntoCargaId;
-
-                try
-                {
-                    PuntoCargaId = Convert.ToInt32(pPuntoCargaId);
-                }
-                catch
-                {
-                    throw new Exception("El PuntoCargaId debe contener valores numericos");
-                }
-
-                Estacion e = Servidor.getInstancia().ColeccionEstacion.BuscarPorId(EstacionId);
-
-                if (e == null)
-                    throw new Exception("No existe una Estacion con el Id " + EstacionId);
-
-                PuntoCarga p = Servidor.getInstancia().ColeccionPuntoCarga.BuscarPorId(PuntoCargaId);
-
-                if (p == null)
-                    throw new Exception("No existe el PuntoCarga con el Id " + PuntoCargaId);
-
-                if (e.ColeccionPuntoCarga.BuscarPorId(PuntoCargaId) == null)
-                    throw new Exception("No se encuentra asociado el Punto de Carga a la Estacion");
-
-                e.ColeccionPuntoCarga.Eliminar(p);
-                r.Mensaje += "Se elimino correctamente a la Estacion " + EstacionId + " el PuntoCarga " + PuntoCargaId;
+                r.Anexo.Add("ColeccionEstacion", cv);
+                r.Mensaje = "Cantidad de estaciones " + cv.Tamano();
             }
             catch (Exception ex)
             {

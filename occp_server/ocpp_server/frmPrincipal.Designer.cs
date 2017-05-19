@@ -43,6 +43,7 @@
             this.btnLogs = new System.Windows.Forms.ToolStripButton();
             this.btnSimulacion = new System.Windows.Forms.ToolStripButton();
             this.btnIniciarServidor = new System.Windows.Forms.ToolStripButton();
+            this.btnEstacion = new System.Windows.Forms.ToolStripButton();
             this.BarraEstatus.SuspendLayout();
             this.BarraHerramientas.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +79,7 @@
             // 
             this.BarraHerramientas.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnVehiculos,
+            this.btnEstacion,
             this.btnPuntoCarga,
             this.btnReserva,
             this.toolStripSeparator1,
@@ -98,7 +100,7 @@
             this.btnVehiculos.ImageTransparentColor = System.Drawing.Color.Black;
             this.btnVehiculos.Name = "btnVehiculos";
             this.btnVehiculos.Size = new System.Drawing.Size(23, 22);
-            this.btnVehiculos.Text = "Nuevo";
+            this.btnVehiculos.Text = "Vehiculo";
             this.btnVehiculos.ToolTipText = "Vehiculos";
             this.btnVehiculos.Click += new System.EventHandler(this.ShowNewForm);
             // 
@@ -120,7 +122,7 @@
             this.btnReserva.ImageTransparentColor = System.Drawing.Color.Black;
             this.btnReserva.Name = "btnReserva";
             this.btnReserva.Size = new System.Drawing.Size(23, 22);
-            this.btnReserva.Text = "Guardar";
+            this.btnReserva.Text = "Estacion";
             this.btnReserva.ToolTipText = "Reservas";
             this.btnReserva.Click += new System.EventHandler(this.btnReserva_Click);
             // 
@@ -157,7 +159,7 @@
             this.btnSimulacion.Name = "btnSimulacion";
             this.btnSimulacion.Size = new System.Drawing.Size(23, 22);
             this.btnSimulacion.Text = "Vista previa de impresión";
-            this.btnSimulacion.ToolTipText = "Logs";
+            this.btnSimulacion.ToolTipText = "Simulacion";
             this.btnSimulacion.Click += new System.EventHandler(this.btnSimulacion_Click);
             // 
             // btnIniciarServidor
@@ -170,6 +172,16 @@
             this.btnIniciarServidor.Text = "Iniciar Servidor";
             this.btnIniciarServidor.Click += new System.EventHandler(this.btnIniciarServidor_Click);
             // 
+            // btnEstacion
+            // 
+            this.btnEstacion.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnEstacion.Image = ((System.Drawing.Image)(resources.GetObject("btnEstacion.Image")));
+            this.btnEstacion.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnEstacion.Name = "btnEstacion";
+            this.btnEstacion.Size = new System.Drawing.Size(23, 22);
+            this.btnEstacion.Text = "Estacion";
+            this.btnEstacion.Click += new System.EventHandler(this.btnEstacion_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,8 +192,7 @@
             this.IsMdiContainer = true;
             this.Name = "frmPrincipal";
             this.Text = "OCPP Server";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.frmPrincipal_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);            
             this.BarraEstatus.ResumeLayout(false);
             this.BarraEstatus.PerformLayout();
             this.BarraHerramientas.ResumeLayout(false);
@@ -205,6 +216,7 @@
         private System.Windows.Forms.ToolStripButton btnLogs;
         private System.Windows.Forms.ToolStripButton btnIniciarServidor;
         private System.Windows.Forms.ToolStripStatusLabel lblEstado;
+        private System.Windows.Forms.ToolStripButton btnEstacion;
     }
 }
 
