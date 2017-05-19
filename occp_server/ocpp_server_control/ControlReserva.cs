@@ -14,7 +14,7 @@ namespace ocpp_server_control
 {
     public static class ControlReserva
     {
-        public static Respuesta AgregarPorPlaca(string pVehiculoPlaca, string pPuntoCargaId, string pDia, string pMes, string pAno, string pHora, string pMinuto, string pTiempo)
+        public static Respuesta AgregarPorPlaca(string pVehiculoPlaca, string pPuntoCargaId, string pNumeroSerie, string pDia, string pMes, string pAno, string pHora, string pMinuto, string pTiempo)
         {
             Respuesta r = new Respuesta("ControlReserva.AgregarPorPlaca");
 
@@ -41,7 +41,7 @@ namespace ocpp_server_control
                 if(p==null)
                     throw new Exception("El punto de carga " + pPuntoCargaId + " no existe");
 
-                r = Agregar(r, v, p, pDia, pMes, pAno, pHora, pMinuto, pTiempo);
+                r = Agregar(r, v, p, pDia, pMes, pAno, pHora, pMinuto, pTiempo, pNumeroSerie);
             }
             catch(Exception ex)
             {
@@ -56,7 +56,7 @@ namespace ocpp_server_control
             return r;
         }
 
-        public static Respuesta AgregarPorTag(string pVehiculoTag, string pPuntoCargaId, string pDia, string pMes, string pAno, string pHora, string pMinuto, string pTiempo)
+        public static Respuesta AgregarPorTag(string pVehiculoTag, string pPuntoCargaId, string pDia, string pMes, string pAno, string pHora, string pMinuto, string pTiempo, string pNumeroSerie)
         {
             Respuesta r = new Respuesta("ControlReserva.AgregarPorTag");
 
@@ -83,7 +83,7 @@ namespace ocpp_server_control
                 if (p == null)
                     throw new Exception("El punto de carga " + pPuntoCargaId + " no existe");
 
-                r = Agregar(r, v, p, pDia, pMes, pAno, pHora, pMinuto, pTiempo);
+                r = Agregar(r, v, p, pDia, pMes, pAno, pHora, pMinuto, pTiempo, pNumeroSerie);
             }
             catch (Exception ex)
             {
@@ -98,7 +98,7 @@ namespace ocpp_server_control
             return r;
         }
 
-        private static Respuesta Agregar(Respuesta r, Vehiculo v, PuntoCarga p, string pDia, string pMes, string pAno, string pHora, string pMinuto, string pTiempo)
+        private static Respuesta Agregar(Respuesta r, Vehiculo v, PuntoCarga p, string pDia, string pMes, string pAno, string pHora, string pMinuto, string pTiempo, string pNumeroSerie)
         {
             try
             {
@@ -144,6 +144,7 @@ namespace ocpp_server_control
                 rv.EEstadoReserva = EEstadoReserva.APROBADA;
                 rv.EnergiaRecarga = 0;
                 rv.PuntoCarga = p;
+                rv.NumeroSerie = pNumeroSerie;
 
                 Servidor.getInstancia().ColeccionReserva.Agregar(rv);
                 r.Anexo.Add("Reserva",rv);
@@ -213,6 +214,33 @@ namespace ocpp_server_control
 
                 r.Anexo.Add("Punto de Carga", v);
                 r.Mensaje = "Punto de Carga con el Id " + pId + " fue encontrado";
+            }
+            catch (Exception ex)
+            {
+                r.Estado = false;
+                r.Mensaje += ex.Message;
+            }
+            finally
+            {
+                ControlLog.Registrar(r);
+            }
+
+            return r;
+        }
+
+        public static Respuesta BuscarPorNumeroSerie(string pNumeroSerie)
+        {
+            Respuesta r = new Respuesta("ControlReserva.BuscarPorNumeroSerie");
+
+            try
+            {
+                Reserva v = Servidor.getInstancia().ColeccionReserva.BuscarPorNumeroSerie(pNumeroSerie);
+
+                if (v == null)
+                    throw new Exception("No existe una reserva numero de serie" + pNumeroSerie);
+
+                r.Anexo.Add("ReservaNumeroSerie", v);
+                r.Mensaje = "Punto de Carga con el numero de serie " + pNumeroSerie + " fue encontrado";
             }
             catch (Exception ex)
             {

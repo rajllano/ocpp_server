@@ -61,7 +61,7 @@ namespace ocpp_server
             Respuesta r0 = ControlPuntoCarga.BuscarPorNumeroSerie(ddlPuntoCarga.Text);
             PuntoCarga p = (PuntoCarga)r0.Anexo["Punto de Carga"];
             
-            Respuesta r = ControlReserva.AgregarPorPlaca(ddlPlaca.Text, p.Id.ToString(), ddlDia.Text, ddlMes.Text, ddlAno.Text, ddlHora.Text, ddlMinuto.Text, ddlTiempo.Text);
+            Respuesta r = ControlReserva.AgregarPorPlaca(ddlPlaca.Text, p.Id.ToString(), ddlPuntoCarga.Text, ddlDia.Text, ddlMes.Text, ddlAno.Text, ddlHora.Text, ddlMinuto.Text, ddlTiempo.Text);
 
             if (r.Estado)
             {

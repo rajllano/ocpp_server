@@ -65,15 +65,32 @@ namespace ocpp_server_control
             
             ControlLog.Registrar(r);
 
-            if (R.ReceivedData.Contains("SOL_RESERVA"))
+            if (R.ReceivedData.Contains("Dato"))
             {
                 String Ip = obtenerIp();
-                Respuesta r0 = ControlComunicaciones.Enviar(Ip, "LE ENVIE OBJETO");
+                String cadena;
+                string numeroSerieReserva = R.ReceivedData.Substring(4, 15);
 
+                //ReservaJson  rev = JSon.DeserializarReservas(numeroSerieReserva);
+                Respuesta r1 = ControlReserva.BuscarPorNumeroSerie(numeroSerieReserva);
+                Reserva v = (Reserva)r1.Anexo["ReservaNumeroSerie"];
+                ControlLog.Registrar(r1);
 
-                JSon.SerializarReser();
+                ReservaJson  eR = new ReservaJson();
+                eR.Id = v.Id;
+                eR.NumeroSerie = v.NumeroSerie;
+                eR.Marca = v.Vehiculo.Marca;
+                eR.Modelo = v.Vehiculo.Modelo;
+                eR.FechaHora = v.FechaHora;
+                eR.FechaRegistro = v.FechaRegistro;
+                eR.Tiempo = 0;
+                eR.ValorRecarga = 0;
+                eR.EnergiaRecarga = 0;
 
+                cadena = JSon.SerializarReserva(eR);
+                Respuesta r0 = ControlComunicaciones.Enviar(Ip, cadena);
                 ControlLog.Registrar(r0);
+
             }
 
         }

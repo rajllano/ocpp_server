@@ -28,6 +28,8 @@ namespace ocpp_server_modelo
 
         public DateTime FechaRegistro { get; set; }
 
+        public string NumeroSerie { get; set; }
+
         public EEstadoReserva EEstadoReserva { get; set; }
     }
 }

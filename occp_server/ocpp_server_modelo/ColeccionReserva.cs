@@ -63,6 +63,24 @@ namespace ocpp_server_modelo
             return r;
         }
 
+        //Puede mejorar
+        public Reserva BuscarPorNumeroSerie(string pNumeroSerie)
+        {
+            Reserva r = null;
+
+            IteradorColeccionReserva i = (IteradorColeccionReserva)this.Iterador();
+
+            while (i.tieneSiguiente())
+            {
+                r = i.Siguiente();
+
+                if (r.PuntoCarga.NumeroSerie == pNumeroSerie)
+                    return r;
+            }
+
+            return r;
+        }
+
         public object Iterador()
         {
             return new IteradorColeccionReserva(this);
